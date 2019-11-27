@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-content-overview',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentOverviewComponent implements OnInit {
 
-  constructor() { }
+  // Jede Komponente die die Location, also die aktuelle Position Nutzen möchte muss folgendes importieren:
+  // import { Location } from '@angular/common';
+  // zusätzlich muss im Konstruktor das location Objekt initialisiert werden.
+  constructor(
+    private location : Location
+  ) { }
 
   ngOnInit() {
   }
 
+  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden 
+  goBack():void {
+    this.location.back();
+  }
 }
