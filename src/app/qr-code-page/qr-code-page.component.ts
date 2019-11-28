@@ -16,9 +16,6 @@ export class QrCodePageComponent implements OnInit {
   // Mit @ViewChild wird das DomElement mit der ID #video (siehe html) angesprochen.
   @ViewChild("video", {static: false})
   public video: any;
-
-  // id welche aus dem QR Code gelesen wird, wird erst initialisert wenn im Bild ein QR gefunden wurde.
-  private idFromQRCode : number;
   
   // Falls keine Erlaubnis auf Kamerazugriff gegeben wird zeigt die Seite einen Infotext.
   private permission : boolean;
@@ -27,6 +24,7 @@ export class QrCodePageComponent implements OnInit {
   constructor(private router : Router) { }
 
   ngOnInit() {
+    this.permission = true;
   }
 
   /**
@@ -36,8 +34,15 @@ export class QrCodePageComponent implements OnInit {
    *  */ 
   public ngAfterViewInit() {
     // navigator ist die Schnittstelle zum User-Agent (Browser), darüber kann z.B. die Kamera angesprochen werden.
-    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+    var browser = <any>navigator;
+    
+    browser.getUserMedia = (browser.getUserMedia ||
+    browser.webkitGetUserMedia ||
+    browser.mozGetUserMedia ||
+    browser.msGetUserMedia);
+
+    if(browser.mediaDevices && browser.mediaDevices.getUserMedia) {
+        browser.mediaDevices.getUserMedia({ audio: false, video: {facingMode: 'environment'} }).then(stream => {
           // mit getUserMedia wird eine Verbindung zur Kamera aufgebaut, bei Erfolg wird das video Objekt mit dem video 
           // stream  initialisiert.
             this.video.nativeElement.srcObject = stream;
@@ -49,10 +54,10 @@ export class QrCodePageComponent implements OnInit {
             codeReader.decodeFromInputVideoDevice(undefined, 'video')
             .then(result => {
                 console.log(result.getText());
-                this.idFromQRCode = Number.parseInt(result.getText());
+                let id = Number.parseInt(result.getText());
                 // Die Methode goToOverview kümmert sich um das Routing.
-                this.goToOverview(this.idFromQRCode);
-                console.log(this.idFromQRCode);
+                this.goToOverview(id);
+                console.log(id);
             })
             .catch(err => console.error(err));
             console.log("video started");
