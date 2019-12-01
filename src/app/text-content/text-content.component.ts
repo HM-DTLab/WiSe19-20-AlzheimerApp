@@ -46,10 +46,9 @@ export class TextContentComponent implements OnInit {
       this.hasText = res.hasText
       console.log(this.hasText);
     });
-    
   }
 
-  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden 
+  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
   goBack():void {
     this.location.back();
   }
