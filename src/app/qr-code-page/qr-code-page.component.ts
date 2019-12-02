@@ -73,7 +73,7 @@ export class QrCodePageComponent implements OnInit {
  * @param id id des Objekts das gescannt wurde.
  */
 private goToOverview(id: number) {
-      this.router.navigateByUrl("/overview/" + id.toString).then(e => {
+      this.router.navigateByUrl("/overview/" + id.toString()).then(e => {
           if (e){
             console.log("Success in Naviation");
           } else {
