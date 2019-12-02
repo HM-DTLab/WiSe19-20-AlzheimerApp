@@ -8,8 +8,8 @@ import { TextContentComponent } from './text-content/text-content.component';
  * den Content-Overview Komponeneten gelinkt. Redirects sind auch möglich.
  */
 const routes: Routes = [
-  { path: 'overview', component: ContentOverviewComponent},
-  { path: '', redirectTo: 'overview', pathMatch: 'full' }, 
+  { path: 'overview/:id', component: ContentOverviewComponent},
+  { path: '', redirectTo: 'overview/1', pathMatch: 'full' },
   { path: 'text-content/:id', component: TextContentComponent }
 ];
 

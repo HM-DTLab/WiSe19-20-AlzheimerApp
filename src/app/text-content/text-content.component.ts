@@ -12,16 +12,23 @@ import { TextContentData } from '../text-content-data';
 export class TextContentComponent implements OnInit {
 
   // Boolean Variable, soll Wert von data-service enthalten, wird in contactDataService benutzt
-  private hasText : boolean;
+  private hasText: boolean;
+  private  readonly id: number = +this.activatedRoute.snapshot.paramMap.get('id');
+  private content: string;
+  private title: string;
   // Jede Komponente die die Location, also die aktuelle Position Nutzen möchte muss folgendes importieren:
   // import { Location } from '@angular/common';
   // zusätzlich muss im Konstruktor das location Objekt initialisiert werden.
   // Für das tracken der ID in der URL wird ein ActivatedRoute Objekt verwendet.
   constructor(
-    private activatedRoute : ActivatedRoute,
-    private location : Location,
-    private dataService : DataServiceService
-  ) { }
+    private activatedRoute: ActivatedRoute,
+    private location: Location,
+    private dataService: DataServiceService
+  ) {
+    // den Titel und den Text des Qr-Codes mit id x laden
+    this.getText();
+    this.getTitle();
+  }
 
   ngOnInit() {
   }
@@ -46,12 +53,25 @@ export class TextContentComponent implements OnInit {
       this.hasText = res.hasText
       console.log(this.hasText);
     });
-    
   }
 
-  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden 
+  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
   goBack():void {
     this.location.back();
+  }
+
+  getText(){
+    this.dataService.getTextContent(this.id)
+      .subscribe(text => {
+        this.content = text.text;
+      });
+  }
+
+  getTitle() {
+    this.dataService.getTextContent(this.id)
+      .subscribe(text => {
+        this.title = text.title;
+      });
   }
 
 }
