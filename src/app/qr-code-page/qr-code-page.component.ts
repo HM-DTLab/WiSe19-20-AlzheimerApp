@@ -16,6 +16,8 @@ export class QrCodePageComponent implements OnInit {
   // Mit @ViewChild wird das DomElement mit der ID #video (siehe html) angesprochen.
   @ViewChild("video", {static: false})
   public video: any;
+
+  private localstream : any;
   
   // Falls keine Erlaubnis auf Kamerazugriff gegeben wird zeigt die Seite einen Infotext.
   private permission : boolean;
@@ -48,6 +50,7 @@ export class QrCodePageComponent implements OnInit {
             this.video.nativeElement.srcObject = stream;
             this.video.nativeElement.play();
             this.permission = true;
+            this.localstream = stream;
             // Der Code Reader aus der Bibliothek zxing kümmert sich um die Erkennung des QR Codes.
             const codeReader = new BrowserQRCodeReader();
             // Der Reader dekodiert den QR Code
@@ -73,13 +76,18 @@ export class QrCodePageComponent implements OnInit {
  * @param id id des Objekts das gescannt wurde.
  */
 private goToOverview(id: number) {
-      this.router.navigateByUrl("/overview/" + id.toString()).then(e => {
-          if (e){
-            console.log("Success in Naviation");
-          } else {
-            console.log("Failure in Naviation");
-          }
-        })
+  this.localstream.getTracks().forEach(element => {
+    element.stop();
+  });
+  
+  this.router.navigateByUrl("/overview/" + id.toString()).then(e => {
+    if (e){
+      window.location.reload();
+      console.log("Success in Navigation");
+    } else {
+      console.log("Failure in Navigation");
+    }
+  })
 }
 
 }
