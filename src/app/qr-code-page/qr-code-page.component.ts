@@ -17,6 +17,7 @@ export class QrCodePageComponent implements OnInit {
   @ViewChild("video", {static: false})
   public video: any;
 
+  // Referenz auf den Videostream
   private localstream : any;
   
   // Falls keine Erlaubnis auf Kamerazugriff gegeben wird zeigt die Seite einen Infotext.
@@ -76,12 +77,14 @@ export class QrCodePageComponent implements OnInit {
  * @param id id des Objekts das gescannt wurde.
  */
 private goToOverview(id: number) {
+  // Der Stream stoppt
   this.localstream.getTracks().forEach(element => {
     element.stop();
   });
   
   this.router.navigateByUrl("/overview/" + id.toString()).then(e => {
     if (e){
+      // Durch neuladen wird die Kamera disabled
       window.location.reload();
       console.log("Success in Navigation");
     } else {
