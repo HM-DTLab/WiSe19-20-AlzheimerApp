@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { DataServiceService } from '../data-service.service';
 import {TextContentComponent} from '../text-content/text-content.component';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-content-overview',
@@ -24,6 +24,7 @@ export class ContentOverviewComponent implements OnInit {
     // private textContentComponent: TextContentComponent,
     private location: Location,
     private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {
     // holt sich id
     this.id = +this.activatedRoute.snapshot.paramMap.get('id');
@@ -33,6 +34,13 @@ export class ContentOverviewComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  /**
+   * Wechselt zur Startseite, auf der die Qr-Codes gescannt werden.
+   */
+  backToQrCodeScan() {
+    this.router.navigate(['/start']);
   }
 
   // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
