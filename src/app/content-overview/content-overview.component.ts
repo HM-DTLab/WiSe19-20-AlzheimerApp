@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-import { DataServiceService } from '../data-service.service';
-import {TextContentComponent} from '../text-content/text-content.component';
+import {Component, OnInit} from '@angular/core';
+import {Location} from '@angular/common';
+import {DataServiceService} from '../data-service.service';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -11,7 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class ContentOverviewComponent implements OnInit {
 
-  // private hasTextContent: boolean;
+  // boolean ob angezeigt werden soll, dass Seite noch geladen wird
   private title: string;
   private id: number;
   private hasText: boolean;
@@ -21,16 +20,21 @@ export class ContentOverviewComponent implements OnInit {
   // zusätzlich muss im Konstruktor das location Objekt initialisiert werden.
   constructor(
     private dataServiceService: DataServiceService,
-    // private textContentComponent: TextContentComponent,
     private location: Location,
     private activatedRoute: ActivatedRoute,
     private router: Router,
   ) {
-    // holt sich id
-    this.id = +this.activatedRoute.snapshot.paramMap.get('id');
-    // in abhängigkeit von ID sich den Titel der Seite holen und boolean ob text vorhanden ist
-    this.getTitle(this.id);
-    this.hasIdText(this.id);
+    this.loadDataFromDataBase();
+  }
+
+  /**
+   * Prüft ob Titel geladen wurde.
+   * Noch nicht geladen => Loader anzeigen
+   * Geladen => Content der seite anzeigen
+   */
+  isLoadingFromDatabase(): boolean {
+    // prüfen ob title noch leer ist ToDo: kann man Statement noch kürzen?
+    return this.title ? false : true;
   }
 
   ngOnInit() {
@@ -43,23 +47,16 @@ export class ContentOverviewComponent implements OnInit {
     this.router.navigate(['/start']);
   }
 
-  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
-  goBack(): void {
-    // hier nicht zurück, sondern zu QR-Code scanner
-    this.location.back();
-  }
-
-  hasIdText(id: number) {
-    this.dataServiceService.getTextContent(id)
-      .subscribe(text => {
-        this.hasText = text.hasText;
-      });
-  }
-
-  getTitle(id: number) {
-    this.dataServiceService.getTextContent(id)
+  /**
+   * Läd ID, Titel und ob bereits ein Textbeitrag ertellt wurde von dem Dataservice.
+   * ToDo später aus der Datenbank
+   */
+  loadDataFromDataBase() {
+    this.id = +this.activatedRoute.snapshot.paramMap.get('id');
+    this.dataServiceService.getTextContent(this.id)
       .subscribe(text => {
         this.title = text.title;
+        this.hasText = text.hasText;
       });
   }
 }
