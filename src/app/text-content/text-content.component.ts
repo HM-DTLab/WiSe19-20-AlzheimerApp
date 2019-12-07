@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataServiceService } from '../data-service.service';
 import { TextContentData } from '../text-content-data';
+import { QrCodeInfoService } from '../qr-code-info.service';
 
 @Component({
   selector: 'app-text-content',
@@ -23,11 +24,15 @@ export class TextContentComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private location: Location,
-    private dataService: DataServiceService
+    private dataService: DataServiceService,
+    private qrCodeInfoService: QrCodeInfoService
   ) {
     // den Titel und den Text des Qr-Codes mit id x laden
-    this.getText();
-    this.getTitle();
+    qrCodeInfoService.qrCodeData.subscribe(
+      qrCodeData => {
+        this.title = qrCodeData.title;
+        this.content = qrCodeData.contentText;
+    });
   }
 
   ngOnInit() {
@@ -38,40 +43,9 @@ export class TextContentComponent implements OnInit {
    * Über die activatedRoute wird der Parameter ausgelesen.
    * @returns id, wenn Zahl eingegeben, null sonst
    */
-  getId() {
-    const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(id);
-    this.contactDataService(id);
-    return  Number.isNaN(id)? null : id;
-  }
-
-  // Kontaktiert den DataService und holt sich für die entsprechende Id den Status hasText und speichert
-  // ihn in die globale Variable hasText
-  contactDataService(id: number) {
-    this.dataService.getTextContent(id)
-    .subscribe(res => {
-      this.hasText = res.hasText
-      console.log(this.hasText);
-    });
-  }
 
   // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
   goBack():void {
     this.location.back();
   }
-
-  getText(){
-    this.dataService.getTextContent(this.id)
-      .subscribe(text => {
-        this.content = text.text;
-      });
-  }
-
-  getTitle() {
-    this.dataService.getTextContent(this.id)
-      .subscribe(text => {
-        this.title = text.title;
-      });
-  }
-
 }

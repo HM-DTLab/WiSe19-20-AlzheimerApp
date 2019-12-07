@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { DataServiceService } from '../data-service.service';
 import {TextContentComponent} from '../text-content/text-content.component';
 import {ActivatedRoute, Router} from '@angular/router';
+import { QrCodeInfoService } from '../qr-code-info.service';
 
 @Component({
   selector: 'app-content-overview',
@@ -13,8 +14,10 @@ export class ContentOverviewComponent implements OnInit {
 
   // private hasTextContent: boolean;
   private title: string;
+  private error: boolean;
   private id: number;
   private hasText: boolean;
+  private contentText: string;
 
   // Jede Komponente die die Location, also die aktuelle Position Nutzen möchte muss folgendes importieren:
   // import { Location } from '@angular/common';
@@ -25,12 +28,17 @@ export class ContentOverviewComponent implements OnInit {
     private location: Location,
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private qrCodeInfoService: QrCodeInfoService
   ) {
     // holt sich id
     this.id = +this.activatedRoute.snapshot.paramMap.get('id');
+    qrCodeInfoService.qrCodeData.subscribe(
+      qrCodeData => {
+        this.title = qrCodeData.title;
+        this.hasText = qrCodeData.hasTextContent;
+    });
     // in abhängigkeit von ID sich den Titel der Seite holen und boolean ob text vorhanden ist
-    this.getTitle(this.id);
-    this.hasIdText(this.id);
+    this.getQrCodeInformation(this.id);
   }
 
   ngOnInit() {
@@ -49,17 +57,13 @@ export class ContentOverviewComponent implements OnInit {
     this.location.back();
   }
 
-  hasIdText(id: number) {
-    this.dataServiceService.getTextContent(id)
-      .subscribe(text => {
-        this.hasText = text.hasText;
-      });
-  }
-
-  getTitle(id: number) {
-    this.dataServiceService.getTextContent(id)
-      .subscribe(text => {
-        this.title = text.title;
+  getQrCodeInformation(id: number) {
+    this.dataServiceService.getQrCodeInformation(id)
+      .subscribe(qrCodeData => {
+        this.error = false;
+        this.qrCodeInfoService.updateQrCodeData(qrCodeData);
+      }, error => {
+        this.error = true;
       });
   }
 }

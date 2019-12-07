@@ -2,7 +2,7 @@ import { Injectable, Optional } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { TextContentData } from './text-content-data';
+import { QrCodeData } from './qr-code-data';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,8 @@ export class DataServiceService {
   constructor(
     private http: HttpClient
   ) {}
-  getTextContent(id: number): Observable<TextContentData> {
-    const url = this.isTextAvilableUrl.concat(id.toString());
-    return this.http.get<TextContentData>(url);
+  getQrCodeInformation(id: number): Observable<QrCodeData> {
+    const url = this.apiUrl.concat("?id=").concat(id.toString());
+    return this.http.get<QrCodeData>(url);
   }
-
 }
