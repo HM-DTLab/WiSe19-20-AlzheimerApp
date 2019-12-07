@@ -9,7 +9,7 @@ import { TextContentData } from './text-content-data';
 })
 export class DataServiceService {
 
-  private isTextAvilableUrl = 'api/getTextContentForId';
+  private apiUrl = 'https://plxmvji4k4.execute-api.eu-central-1.amazonaws.com/api';
 
   constructor(
     private http: HttpClient
