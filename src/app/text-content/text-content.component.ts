@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataServiceService } from '../data-service.service';
-import { TextContentData } from '../text-content-data';
 import { QrCodeInfoService } from '../qr-code-info.service';
 
 @Component({
