@@ -20,7 +20,6 @@ export class ContentOverviewComponent implements OnInit {
   // zusätzlich muss im Konstruktor das location Objekt initialisiert werden.
   constructor(
     private dataServiceService: DataServiceService,
-    private location: Location,
     private activatedRoute: ActivatedRoute,
     private router: Router,
   ) {
@@ -33,7 +32,7 @@ export class ContentOverviewComponent implements OnInit {
    * Geladen => Content der seite anzeigen
    */
   isLoadingFromDatabase(): boolean {
-    // prüfen ob title noch leer ist ToDo: kann man Statement noch kürzen?
+    // prüfen ob title noch leer
     return this.title ? false : true;
   }
 
