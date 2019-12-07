@@ -18,10 +18,18 @@ export class InMemoryDataService implements InMemoryDbService {
       text: '',
       hasText: false
     };
+    const getTextContentForId2 = {
+      id: 2,
+      title: 'Kafeemaschine',
+      text: 'Stecke einen Kaffeefilter in den Filterkorb. Du kannst Natur- oder gebleichte Filter nehmen, nur keine, die Krebs erregen. Billige Filter verstopfen durch das Kaffeepulver leichter.\n' +
+            'Viele Kaffeemaschinen kommen mit eigenem Netzfilter. Wenn einer verfügbar ist, ist das normalerweise die einfachste und umweltfreundlichste Variante. Verwende lieber einen speziell für deine Maschine vorgesehenen Filter, als einen einfachen aus Papier.',
+      hasText: true
+    };
 
     return {
       getTextContentForId0,
-      getTextContentForId1
+      getTextContentForId1,
+      getTextContentForId2
     };
   }
 }

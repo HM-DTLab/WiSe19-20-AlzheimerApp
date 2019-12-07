@@ -1,12 +1,8 @@
-<!--Falls Daten noch nicht geladen wurde einen Loader einblenden-->
-<!--HTML fuer Loader, jedes div ist ein punkt-->
-<div *ngIf="isLoadingFromDatabase()" class="lds-roller">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+<!--Titel der Seite ineblenden-->
+<h1>{{title}}</h1>
+<!--falls text vorhanden ist, den button anzeigen lassen-->
+<div *ngIf="hasText">
+  <app-text-content-button></app-text-content-button>
 </div>
 
 <!--Sobald Titel geladen wurde alles anzeigen-->

@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Location} from '@angular/common';
-import {DataServiceService} from '../data-service.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { DataServiceService } from '../data-service.service';
+import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-content-overview',
@@ -20,10 +21,15 @@ export class ContentOverviewComponent implements OnInit {
   // zusätzlich muss im Konstruktor das location Objekt initialisiert werden.
   constructor(
     private dataServiceService: DataServiceService,
+    private location: Location,
     private activatedRoute: ActivatedRoute,
     private router: Router,
   ) {
-    this.loadDataFromDataBase();
+    // holt sich id
+    this.id = +this.activatedRoute.snapshot.paramMap.get('id');
+    // in abhängigkeit von ID sich den Titel der Seite holen und boolean ob text vorhanden ist
+    this.loadTitleOfId(this.id);
+    this.loadHasIdText(this.id);
   }
 
   /**
@@ -40,6 +46,23 @@ export class ContentOverviewComponent implements OnInit {
   }
 
   /**
+   * Navigiert zur Text-Content Übersicht des QR-Codes
+   */
+  goToTextContent(): void {
+    this.router.navigate(['/text-content/' + this.id]);
+  }
+
+  /**
+   * Prüft, ob eine Textbeschreibung zu dem QR-Code verfügbar ist und speichert den Status in hasText
+   * @param id Id eines QR-Codes, zudem ermittelt wird, ob Txtcontent vorhanden ist
+   */
+  private loadHasIdText(id: number) {
+    this.dataServiceService.getTextContent(id)
+      .subscribe(text => {
+        this.hasText = text.hasText;
+      });
+  }
+  /**
    * Wechselt zur Startseite, auf der die Qr-Codes gescannt werden.
    */
   backToQrCodeScan() {
@@ -47,12 +70,11 @@ export class ContentOverviewComponent implements OnInit {
   }
 
   /**
-   * Läd ID, Titel und ob bereits ein Textbeitrag ertellt wurde von dem Dataservice.
-   * ToDo später aus der Datenbank
+   * Läd den Titel eines QR-Codes und speichrt ihn in <code>title<code/>
+   * @param id Id eines QR-Codes, zudem der Titel geladen wird
    */
-  loadDataFromDataBase() {
-    this.id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.dataServiceService.getTextContent(this.id)
+  private loadTitleOfId(id: number) {
+    this.dataServiceService.getTextContent(id)
       .subscribe(text => {
         this.title = text.title;
         this.hasText = text.hasText;
