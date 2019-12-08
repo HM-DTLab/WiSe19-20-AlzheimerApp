@@ -10,6 +10,7 @@ import { QrCodePageComponent } from './qr-code-page/qr-code-page.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'; 
 import { JwtModule } from "@auth0/angular-jwt";
+import { RegisterComponent } from './register/register.component';
 
 const tokenGetter = function (){
   return localStorage.getItem("access_token");
@@ -21,7 +22,8 @@ const tokenGetter = function (){
     ContentOverviewComponent,
     TextContentComponent,
     QrCodePageComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

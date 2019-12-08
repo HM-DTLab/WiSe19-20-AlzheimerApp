@@ -29,14 +29,14 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    if (
-      this.authService.login(this.loginForm.controls.email.value, this.loginForm.controls.password.value)
-    ) {
-      console.log("Succesfully logged in");
-      this.router.navigate(['start']);
-    } else {
-      this.isInvalid = true;
-    }
+
+    this.authService.login(this.loginForm.controls.email.value, this.loginForm.controls.password.value).subscribe(worked => {
+      if (!worked) {
+        this.isInvalid = true;
+      } else {
+        this.router.navigate(['start']);
+      }
+    })
   }
 
 }

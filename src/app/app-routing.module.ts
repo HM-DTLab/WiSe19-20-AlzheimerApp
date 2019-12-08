@@ -5,6 +5,7 @@ import { TextContentComponent } from './text-content/text-content.component';
 import { QrCodePageComponent } from './qr-code-page/qr-code-page.component';
 import { LoginComponent } from './login/login.component';
 import { AuthorisationGuardService } from './authorisation-guard.service';
+import { RegisterComponent } from './register/register.component';
 
 /**
  * Objekt definiert die Routen der App, bspw wird bei Eingabe von localhost:4200/overview auf
@@ -13,6 +14,7 @@ import { AuthorisationGuardService } from './authorisation-guard.service';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, 
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent},
   { path: 'start', component: QrCodePageComponent, canActivate: [AuthorisationGuardService] },
   { path: 'overview/:id', component: ContentOverviewComponent, canActivate: [AuthorisationGuardService] },
   { path: 'text-content/:id', component: TextContentComponent, canActivate: [AuthorisationGuardService] }
