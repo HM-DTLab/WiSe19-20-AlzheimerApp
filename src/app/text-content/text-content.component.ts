@@ -26,7 +26,9 @@ export class TextContentComponent implements OnInit {
     private dataService: DataServiceService,
     private qrCodeInfoService: QrCodeInfoService
   ) {
-    // den Titel und den Text des Qr-Codes mit id x laden
+    /**
+     * Holt sich QR-Code-Daten aus QrCodeInfoService
+     */
     qrCodeInfoService.qrCodeData.subscribe(
       qrCodeData => {
         this.title = qrCodeData.title;

@@ -14,6 +14,10 @@ export class DataServiceService {
   constructor(
     private http: HttpClient
   ) {}
+  /**
+   * Holt sich anhand der ID die entsprechenden QR-Code-Daten aus AWS
+   * @param id 
+   */
   getQrCodeInformation(id: number): Observable<QrCodeData> {
     const url = this.apiUrl.concat("?id=").concat(id.toString());
     return this.http.get<QrCodeData>(url);
