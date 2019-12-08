@@ -8,6 +8,9 @@ import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+/**
+ * Kümmert sich um den Login mithilfe der Angular ReactiveForms
+ */
 export class LoginComponent implements OnInit {
   isInvalid : boolean;
   loginForm : FormGroup;
@@ -18,6 +21,9 @@ export class LoginComponent implements OnInit {
       }
   }
   
+  /**
+   * Bildet eine neue FormGroup
+   */
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
@@ -25,6 +31,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  /**
+   * Wird nach dem Bestätigen der eingaben aufgerufen und sendet Anfrage mithilfe des AuthorisationServices
+   */
   login() : void {
     if (this.loginForm.invalid) {
       return;

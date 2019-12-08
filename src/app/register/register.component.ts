@@ -8,6 +8,10 @@ import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
+/**
+ * Kümmert sich um die Registrierung neuer Nutzer.
+ */
 export class RegisterComponent implements OnInit {
   registerForm : FormGroup;
   codeInputForm : FormGroup;
@@ -16,6 +20,10 @@ export class RegisterComponent implements OnInit {
 
   constructor(public authService: AuthorisationService, public router: Router, public formBuilder : FormBuilder) { }
 
+  /**
+   * Initialisiert die beiden Form Objekte, einmal zum eingeben der neuen User-Infos und anschließend
+   * zum eingeben des Bestätigungscodes
+   */
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       email: ['', Validators.required],
@@ -28,6 +36,9 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  /**
+   * Wird nach Eingabe aller Daten aufgerufen und ruft Registrier-Methode des AuthorisationServices auf.
+   */
   register() : void {
     if (
       this.registerForm.invalid || this.registerForm.controls.FirstTimePassword.value !== this.registerForm.controls.SecondTimePassword.value
@@ -45,6 +56,9 @@ export class RegisterComponent implements OnInit {
     })
   }
 
+  /**
+   * Wird nach Eingabe des Codes aufgerufen und ruft Registrier-Methode des AuthorisationServices auf.
+   */
   sendAuthCode() : void {
     if(this.codeInputForm.invalid) {
       this.isInvalid = true;

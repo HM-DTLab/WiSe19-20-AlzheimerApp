@@ -6,6 +6,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * Beinhaltet die Anmeldungslogik bei Cognito. Kann den Aktuellen Login Status zurückgeben, sich anmelden oder eine Registrierung
+ * (inkl. Bestätigungscode) durchführen.
+ */
 export class AuthorisationService {
   
   poolData = {
@@ -17,6 +21,11 @@ export class AuthorisationService {
 
   constructor(public jwtHelper: JwtHelperService) { }
 
+  /**
+   * Loggt einen User ein
+   * @param username Der Nutzername (muss Email sein)
+   * @param password Passwort des Nutzers
+   */
   login(username: string, password: string) : Observable<any> {
     var authenticationData = {
       Username : username,
@@ -45,6 +54,11 @@ export class AuthorisationService {
     });
   }
 
+  /**
+   * Registriert einen neuen User. Dieser erhält eine Email und muss den Bestätigungscode eingeben.
+   * @param email Email des neuen Nutzers
+   * @param password Passwort des neuen Nutzers
+   */
   register(email : string, password: string) : Observable<any> {
     const attributesList = [];
   
@@ -59,6 +73,10 @@ export class AuthorisationService {
     });
   }
 
+  /**
+   * Validiert die Emailadresse durch eingeben de Codes. (Muss gemacht werden bevor ein User freigeschalten wird).
+   * @param code BEstätigungscode
+   */
   confirmAuthCode(code) : Observable<any> {
     const user = {
       Username : this.currUser.username,
@@ -77,6 +95,9 @@ export class AuthorisationService {
     });
   }
 
+  /**
+   * Gibt den aktuellen Login Status zurück (angemeldet oder nicht).
+   */
   isLoggedIn() : boolean {
     const token = localStorage.getItem('Access-token');
     return !this.jwtHelper.isTokenExpired(token);
