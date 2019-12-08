@@ -1,2 +1,17 @@
 <h1> LOGIN </h1>
-<button (click)="login()">Log in</button>
+
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div>
+    <label for="email">Email:
+      <input type="text" formControlName="email" placeholder="Bitte geben Sie ihre Email ein" required />
+    </label>
+  </div>
+  <div>
+    <label for="password">Password:
+      <input type="password" formControlName="password" placeholder="Bitte geben Sie ihr Passwort ein" required />
+    </label>
+  </div>
+  <button>Log in</button>
+</form>
+<div *ngIf="isInvalid">Login fehlgeschlagen</div>

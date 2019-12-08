@@ -8,6 +8,7 @@ import { ContentOverviewComponent } from './content-overview/content-overview.co
 import { TextContentComponent } from './text-content/text-content.component';
 import { QrCodePageComponent } from './qr-code-page/qr-code-page.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'; 
 import { JwtModule } from "@auth0/angular-jwt";
 
 const tokenGetter = function (){
@@ -24,6 +25,8 @@ const tokenGetter = function (){
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     JwtModule.forRoot({

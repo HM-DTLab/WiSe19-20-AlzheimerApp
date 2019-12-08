@@ -9,7 +9,7 @@ export class AuthorisationService {
 
   constructor(public jwtHelper: JwtHelperService) { }
 
-  login(username: string, password: string) : void {
+  login(username: string, password: string) : any {
     var authenticationData = {
       Username : username,
       Password : password,
@@ -28,12 +28,12 @@ export class AuthorisationService {
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: result => {
             var accessToken = result.getAccessToken().getJwtToken();
-            console.log(accessToken);
             // Ab hier ist man eingeloggt und hat den Token für die Http-Requests
             localStorage.setItem('Access-token', accessToken);
+            console.log("Logged in on cognito");
         },
         onFailure: function(err) {
-            alert(err);
+            alert("falsches Passwort");
         },
     });
   }
