@@ -6,12 +6,9 @@
   <div></div>
   <div></div>
 </div>
-
 <div *ngIf="!isLoadingFromDatabase()">
-  <!--Sobald Titel geladen wurde alles anzeigen-->
-  <div *ngIf="!isLoadingFromDatabase()">
-    <button (click)="backToQrCodeScan()">Neuen QR-Code scannen</button>
-    <!--Titel der Seite ineblenden-->
+  <button (click)="goBack()">Neuen QR-Code scannen</button>
+  <div *ngIf="!error">
     <h1>{{title}}</h1>
     <!--falls text vorhanden ist, den button anzeigen lassen-->
     <div *ngIf="hasText">
@@ -21,4 +18,10 @@
       Es wurde noch kein Eintrag zu {{title}} erstellt.
     </div>
   </div>
+  <div *ngIf="error">
+    <h1>Hinweis</h1>
+    Zu diesem QR-Code sind keine Informationen verfügbar.
+  </div>
 </div>
+    
+

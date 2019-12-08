@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { DataServiceService } from '../data-service.service';
-import { ActivatedRoute } from '@angular/router';
-import {Router} from '@angular/router';
+import {TextContentComponent} from '../text-content/text-content.component';
+import {ActivatedRoute, Router} from '@angular/router';
+import { QrCodeInfoService } from '../qr-code-info.service';
 
 @Component({
   selector: 'app-content-overview',
@@ -13,8 +14,10 @@ export class ContentOverviewComponent implements OnInit {
 
   // boolean ob angezeigt werden soll, dass Seite noch geladen wird
   private title: string;
+  private error: boolean;
   private id: number;
   private hasText: boolean;
+  private contentText: string;
 
   // Jede Komponente die die Location, also die aktuelle Position Nutzen möchte muss folgendes importieren:
   // import { Location } from '@angular/common';
@@ -24,12 +27,17 @@ export class ContentOverviewComponent implements OnInit {
     private location: Location,
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private qrCodeInfoService: QrCodeInfoService
   ) {
     // holt sich id
     this.id = +this.activatedRoute.snapshot.paramMap.get('id');
+    qrCodeInfoService.qrCodeData.subscribe(
+      qrCodeData => {
+        this.title = qrCodeData.title;
+        this.hasText = qrCodeData.hasTextContent;
+    });
     // in abhängigkeit von ID sich den Titel der Seite holen und boolean ob text vorhanden ist
-    this.loadTitleOfId(this.id);
-    this.loadHasIdText(this.id);
+    this.getQrCodeInformation(this.id);
   }
 
   /**
@@ -52,32 +60,19 @@ export class ContentOverviewComponent implements OnInit {
     this.router.navigate(['/text-content/' + this.id]);
   }
 
-  /**
-   * Prüft, ob eine Textbeschreibung zu dem QR-Code verfügbar ist und speichert den Status in hasText
-   * @param id Id eines QR-Codes, zudem ermittelt wird, ob Txtcontent vorhanden ist
-   */
-  private loadHasIdText(id: number) {
-    this.dataServiceService.getTextContent(id)
-      .subscribe(text => {
-        this.hasText = text.hasText;
-      });
-  }
-  /**
-   * Wechselt zur Startseite, auf der die Qr-Codes gescannt werden.
-   */
-  backToQrCodeScan() {
-    this.router.navigate(['/start']);
+  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
+  goBack(): void {
+    // hier nicht zurück, sondern zu QR-Code scanner
+    this.location.back();
   }
 
-  /**
-   * Läd den Titel eines QR-Codes und speichrt ihn in <code>title<code/>
-   * @param id Id eines QR-Codes, zudem der Titel geladen wird
-   */
-  private loadTitleOfId(id: number) {
-    this.dataServiceService.getTextContent(id)
-      .subscribe(text => {
-        this.title = text.title;
-        this.hasText = text.hasText;
+  getQrCodeInformation(id: number) {
+    this.dataServiceService.getQrCodeInformation(id)
+      .subscribe(qrCodeData => {
+        this.error = false;
+        this.qrCodeInfoService.updateQrCodeData(qrCodeData);
+      }, error => {
+        this.error = true;
       });
   }
 }
