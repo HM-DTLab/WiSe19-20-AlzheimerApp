@@ -30,8 +30,8 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.authService.login(this.loginForm.controls.email.value, this.loginForm.controls.password.value).subscribe(worked => {
-      if (!worked) {
+    this.authService.login(this.loginForm.controls.email.value, this.loginForm.controls.password.value).subscribe((result) => {
+      if (!result) {
         this.isInvalid = true;
       } else {
         this.router.navigate(['start']);
