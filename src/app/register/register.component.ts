@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthorisationService } from '../authorisation.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-register',
@@ -40,14 +41,23 @@ export class RegisterComponent implements OnInit {
    * Wird nach Eingabe aller Daten aufgerufen und ruft Registrier-Methode des AuthorisationServices auf.
    */
   register() : void {
-    if (
-      this.registerForm.invalid || this.registerForm.controls.FirstTimePassword.value !== this.registerForm.controls.SecondTimePassword.value
-      ) {
+    var firstTimePassword = this.registerForm.controls.FirstTimePassword.value;
+    var secondTimePassword = this.registerForm.controls.SecondTimePassword.value;
+    var email = this.registerForm.controls.email.value;
+    if (this.registerForm.invalid || firstTimePassword !== secondTimePassword) {
       this.isInvalid = true;
       return;
     }
 
-    this.authService.register(this.registerForm.controls.email.value, this.registerForm.controls.SecondTimePassword.value).subscribe(worked => {
+
+    var regexPassword = new RegExp("(?=.{8,})(?=.*[0-9])(?=.[!@#\$%\^&])(?=.*[A-Z])");
+    var regexMail = new RegExp(".*@.*");
+    if (!(regexPassword.test(firstTimePassword) || regexMail.test(email))) {
+      this.isInvalid = true;
+      return;
+    }
+
+    this.authService.register(email, firstTimePassword).subscribe(worked => {
       if (!worked) {
         this.isInvalid = true;
       } else {
@@ -65,7 +75,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    this.authService.confirmAuthCode(this.codeInputForm.controls.codeInput.value).subscribe(worked => {
+    this.authService.confirmAuthCode(this.registerForm.controls.email.value, this.codeInputForm.controls.codeInput.value).subscribe(worked => {
       if (!worked) {
         this.isInvalid = true;
       } else {

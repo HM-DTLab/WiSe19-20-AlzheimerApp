@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 /**
- * Beinhaltet die Anmeldungslogik bei Cognito. Kann den Aktuellen Login Status zurückgeben, sich anmelden oder eine Registrierung
- * (inkl. Bestätigungscode) durchführen.
+ * Beinhaltet die Anmeldungslogik bei Cognito. Kann den Aktuellen Login Status zurückgeben, sich anmelden oder 
+ * eine Registrierung (inkl. Bestätigungscode) durchführen.
  */
 export class AuthorisationService {
   
@@ -61,11 +61,11 @@ export class AuthorisationService {
    */
   register(email : string, password: string) : Observable<any> {
     const attributesList = [];
-  
     return Observable.create(observer => {
       this.userPool.signUp(email, password, attributesList, null, (err, result) => {
         if (err) {
           console.log("An error occured during regeristration", err);
+          observer.err(err);
         }
         this.currUser = result.user;
         observer.next(result);
@@ -77,9 +77,9 @@ export class AuthorisationService {
    * Validiert die Emailadresse durch eingeben de Codes. (Muss gemacht werden bevor ein User freigeschalten wird).
    * @param code BEstätigungscode
    */
-  confirmAuthCode(code) : Observable<any> {
+  confirmAuthCode(username, code) : Observable<any> {
     const user = {
-      Username : this.currUser.username,
+      Username : username,
       Pool : this.userPool
     };
 
@@ -88,6 +88,7 @@ export class AuthorisationService {
       cognitoUser.confirmRegistration(code, true, (err, result) => {
         if (err) {
           console.log(err);
+          observer.err(err);
         }
         console.log("confirmAuthCode() success", result);
         observer.next(true);
