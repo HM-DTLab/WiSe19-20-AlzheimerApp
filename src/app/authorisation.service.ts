@@ -33,23 +33,26 @@ export class AuthorisationService {
     };
     var authenticationDetails = new AuthenticationDetails(authenticationData);
     var userData = {
-        Username : 'firlus@hm.edu',
+        Username : username,
         Pool : this.userPool
     };
     var cognitoUser = new CognitoUser(userData);
 
     return Observable.create(observer => {
       cognitoUser.authenticateUser(authenticationDetails, {
-        onSuccess: function (result) {
-  
-          localStorage.setItem('Access-token', result.getAccessToken().getJwtToken());
-          observer.next(result);
-          observer.complete();
+        onSuccess: result => {
+            var accessToken = result.getAccessToken().getJwtToken();
+            // Ab hier ist man eingeloggt und hat den Token für die Http-Requests
+            localStorage.setItem("Access-token", accessToken);
+            observer.next(result);
+            console.log("Logged in in Auth Service")
+            observer.complete();
         },
         onFailure: function(err) {
-          console.log(err);
-          observer.error(err);
+            observer.error(err);
+            observer.complete();
         },
+    
       });
     });
   }
@@ -65,10 +68,13 @@ export class AuthorisationService {
       this.userPool.signUp(email, password, attributesList, null, (err, result) => {
         if (err) {
           console.log("An error occured during regeristration", err);
-          observer.err(err);
+          observer.error(err);
+          observer.complete();
+        } else {
+          this.currUser = result.user;
+          observer.next(result);
+          observer.complete();
         }
-        this.currUser = result.user;
-        observer.next(result);
       });
     });
   }
@@ -88,7 +94,7 @@ export class AuthorisationService {
       cognitoUser.confirmRegistration(code, true, (err, result) => {
         if (err) {
           console.log(err);
-          observer.err(err);
+          observer.error(err);
         }
         console.log("confirmAuthCode() success", result);
         observer.next(true);

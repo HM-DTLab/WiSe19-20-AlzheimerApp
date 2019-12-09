@@ -18,7 +18,6 @@
   </form>
 
   <div *ngIf="isInvalid">Registrierung fehlgeschlagen</div>
-
   <div *ngIf="needRegCode">
     Ihnen wurde eine Mail an {{this.registerForm.controls.email.value}} gesendet. Geben Sie den dort gennanten Code bitte hier ein.
     <form [formGroup]="codeInputForm" (ngSubmit)="sendAuthCode()">

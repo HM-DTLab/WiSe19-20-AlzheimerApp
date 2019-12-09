@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthorisationService } from '../authorisation.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-register',
@@ -57,13 +56,19 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
-    this.authService.register(email, firstTimePassword).subscribe(worked => {
+    this.authService.register(email, firstTimePassword).subscribe((worked) => {
       if (!worked) {
         this.isInvalid = true;
       } else {
         this.needRegCode = true;
       }
-    })
+    }, (err) => {
+      console.log("Auch Fehler in Register Komponente", err);
+      if (err.name.includes("Exists")) {
+        this.needRegCode = true;
+        this.isInvalid = false;
+      }
+    });
   }
 
   /**
