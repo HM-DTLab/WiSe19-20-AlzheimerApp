@@ -9,7 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const getTextContentForId0 = {
       id: 0,
       title: 'Title0',
-      text: 'Lorem ipsum',
+      text: 'Lorem Jals Peter Kam zu Spät',
       hasText: true
     };
     const getTextContentForId1 = {

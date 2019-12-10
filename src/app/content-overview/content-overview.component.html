@@ -2,7 +2,7 @@
 <h1>{{title}}</h1>
 <!--falls text vorhanden ist, den button anzeigen lassen-->
 <div *ngIf="hasText">
-  <app-text-content-button></app-text-content-button>
+  <button type="button" class="btn btn-secondary"><app-text-content-button></app-text-content-button></button>
 </div>
 <div *ngIf="!hasText">
   Es wurde noch kein Eintrag zu {{title}} erstellt.
