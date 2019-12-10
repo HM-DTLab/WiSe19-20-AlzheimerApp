@@ -42,8 +42,10 @@ export class AuthorisationService {
       cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: result => {
             var accessToken = result.getAccessToken().getJwtToken();
+            var idToken = result.getIdToken().getJwtToken();
             // Ab hier ist man eingeloggt und hat den Token für die Http-Requests
             localStorage.setItem("Access-token", accessToken);
+            localStorage.setItem("Id-token", idToken);
             observer.next(result);
             console.log("Logged in in Auth Service")
             observer.complete();
