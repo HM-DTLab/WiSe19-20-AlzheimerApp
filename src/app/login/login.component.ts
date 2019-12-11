@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
-      password: ['', Validators.required] 
+      password: ['', Validators.required],
+      checkboxEditor: ['']
     });
   }
 
@@ -36,12 +37,19 @@ export class LoginComponent implements OnInit {
    */
   login() : void {
     if (this.loginForm.invalid) {
+      console.log("Invalid form");
       this.isInvalid = true;
       return;
     }
 
     this.authService.login(this.loginForm.controls.email.value, this.loginForm.controls.password.value).subscribe((result) => {
       if (result) {
+        console.log(this.loginForm.controls.checkboxEditor.value);
+        if (this.loginForm.controls.checkboxEditor.value) {
+          localStorage.setItem('isEditor', 'true');
+        } else {
+          localStorage.setItem('isEditor', 'false');
+        }
         this.router.navigate(['start']);
       } else {
         this.isInvalid = true;
