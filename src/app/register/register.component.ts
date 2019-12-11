@@ -18,7 +18,11 @@ export class RegisterComponent implements OnInit {
   needRegCode : boolean;
   isInvalid : boolean;
 
-  constructor(public authService: AuthorisationService, public router: Router, public formBuilder : FormBuilder) { }
+  constructor(public authService: AuthorisationService, public router: Router, public formBuilder : FormBuilder) {
+    if (authService.isLoggedIn()) {
+      router.navigate(['start']);
+    }
+   }
 
   /**
    * Initialisiert die beiden Form Objekte, einmal zum eingeben der neuen User-Infos und anschließend
