@@ -7,12 +7,12 @@
   <div></div>
 </div>
 <div *ngIf="!isLoadingFromDatabase()">
-  <button (click)="goBack()">Neuen QR-Code scannen</button>
+  <button (click)="goBack()" class="btn btn-secondary">Neuen QR-Code scannen</button>
   <div *ngIf="!error">
     <h1>{{title}}</h1>
     <!--falls text vorhanden ist, den button anzeigen lassen-->
     <div *ngIf="hasText">
-      <button (click)="goToTextContent()">Textinformation abrufen</button>
+      <button (click)="goToTextContent()" class="btn btn-secondary">Textinformation abrufen</button>
     </div>
     <div *ngIf="!hasText">
       Es wurde noch kein Eintrag zu {{title}} erstellt.
