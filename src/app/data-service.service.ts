@@ -19,7 +19,9 @@ export class DataServiceService {
    * @param id 
    */
   getQrCodeInformation(id: number): Observable<QrCodeData> {
+    var headers = new HttpHeaders().set('Authorization', localStorage.getItem('Id-token'));
+    
     const url = this.apiUrl.concat("?id=").concat(id.toString());
-    return this.http.get<QrCodeData>(url); 
+    return this.http.get<QrCodeData>(url,{headers: headers}); 
   }
 }

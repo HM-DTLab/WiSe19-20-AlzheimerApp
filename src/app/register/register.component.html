@@ -1,0 +1,31 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div>
+      <label for="email">Email:
+        <input type="text" formControlName="email" placeholder="Bitte geben Sie ihre Email ein" required />
+      </label>
+    </div>
+    <div>
+      <label for="FirstTimePassword">Passwort:
+        <input type="password" formControlName="FirstTimePassword" placeholder="Bitte geben Sie ihr Passwort ein" required />
+      </label>
+    </div>
+    <div>
+      <label for="SecondTimePassword">Passwort wiederholen:
+        <input type="password" formControlName="SecondTimePassword" placeholder="Bitte geben Sie ihr Passwort ein required" />
+      </label>
+    </div>
+    <button>Registrieren</button>
+  </form>
+
+  <div *ngIf="isInvalid">Registrierung fehlgeschlagen</div>
+  <div *ngIf="needRegCode">
+    Ihnen wurde eine Mail an {{this.registerForm.controls.email.value}} gesendet. Geben Sie den dort gennanten Code bitte hier ein.
+    <form [formGroup]="codeInputForm" (ngSubmit)="sendAuthCode()">
+      <div>
+        <label for="codeInput">Registrierungscode
+          <input type="text" formControlName="codeInput" placeholder="Bitte geben Sie ihren Registrierungscode ein" required>
+        </label>
+      </div>
+      <button>Code überprüfen</button>
+    </form>
+  </div>
