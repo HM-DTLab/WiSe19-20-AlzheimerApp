@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, CanActivate } from '@angular/router';
-import { ContentOverviewComponent } from './content-overview/content-overview.component';
-import { TextContentComponent } from './text-content/text-content.component';
-import { QrCodePageComponent } from './qr-code-page/qr-code-page.component';
-import { LoginComponent } from './login/login.component';
-import { AuthorisationGuardService } from './authorisation-guard.service';
-import { RegisterComponent } from './register/register.component';
+import { ContentOverviewComponent } from './Components/content-overview/content-overview.component';
+import { TextContentComponent } from './Components/text-content/text-content.component';
+import { QrCodePageComponent } from './Components/qr-code-page/qr-code-page.component';
+import { LoginComponent } from './Components/login/login.component';
+import { AuthorisationGuardService } from './Services/authorisation-guard.service';
+import { RegisterComponent } from './Components/register/register.component';
 
 /**
  * Objekt definiert die Routen der App, bspw wird bei Eingabe von localhost:4200/overview auf
