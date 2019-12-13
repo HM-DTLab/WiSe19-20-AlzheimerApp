@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 col-10 text-center mx-auto ">
+  <div class="col-xl-4 col-lg-5 col-md-7 col-sm-8 col-10 text-center mx-auto ">
       <h1 class="text-center title"> Login </h1>
 
     <form [formGroup]="loginForm" (ngSubmit)="login()" class="justify-content-center">
@@ -39,7 +39,7 @@
       <button class="btn btn-success form-control">Anmelden</button>
     </form>
     <div *ngIf="isInvalid" class="alert alert-danger">Login fehlgeschlagen</div>
-    <nav class="register text-left">
+    <nav class="login text-left">
       <a routerLink="/register">Noch kein Mitglied? Hier registrieren</a>
     </nav>
   </div>
