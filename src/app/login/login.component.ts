@@ -14,13 +14,15 @@ import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 export class LoginComponent implements OnInit {
   isInvalid : boolean;
   loginForm : FormGroup;
+  private userView = true;
 
-  constructor(public authService: AuthorisationService, public router: Router, public formBuilder : FormBuilder) { 
-    if (this.authService.isLoggedIn()) { 
+
+  constructor(public authService: AuthorisationService, public router: Router, public formBuilder : FormBuilder) {
+    if (this.authService.isLoggedIn()) {
       this.router.navigate(['/start']);
       }
   }
-  
+
   /**
    * Bildet eine neue FormGroup
    */
@@ -28,10 +30,14 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
-      checkboxEditor: ['']
+      //optRadio: [''],
     });
+
   }
 
+  logUserView() {
+    console.log(this.userView);
+  }
   /**
    * Wird nach dem Bestätigen der eingaben aufgerufen und sendet Anfrage mithilfe des AuthorisationServices
    */
@@ -44,8 +50,8 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.loginForm.controls.email.value, this.loginForm.controls.password.value).subscribe((result) => {
       if (result) {
-        console.log(this.loginForm.controls.checkboxEditor.value);
-        if (this.loginForm.controls.checkboxEditor.value) {
+        console.log("sicht " + this.userView);
+        if (!this.userView) {
           localStorage.setItem('isEditor', 'true');
         } else {
           localStorage.setItem('isEditor', 'false');
