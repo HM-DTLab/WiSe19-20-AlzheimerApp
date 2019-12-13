@@ -24,16 +24,16 @@
     <button class="btn btn-success login form-control">Registrieren</button>
   </form>
 
-  <div *ngIf="isInvalid">Registrierung fehlgeschlagen</div>
-  <div *ngIf="needRegCode">
+  <div *ngIf="isInvalid" class="alert alert-danger text-left">Registrierung fehlgeschlagen</div>
+  <div *ngIf="needRegCode" class="text-left" style="margin-top: 15px">
     Ihnen wurde eine Mail an {{this.registerForm.controls.email.value}} gesendet. Geben Sie den dort gennanten Code bitte hier ein.
     <form [formGroup]="codeInputForm" (ngSubmit)="sendAuthCode()">
-      <div>
-        <label for="codeInput">Registrierungscode
-          <input id="codeInput" type="text" formControlName="codeInput" placeholder="Bitte geben Sie ihren Registrierungscode ein" required>
+      <div class="form-group">
+        <label for="codeInput" class="register-code">Registrierungscode
+          <input class="form-control" id="codeInput" type="text" formControlName="codeInput" placeholder="Bitte geben Sie ihren Registrierungscode ein" required>
         </label>
       </div>
-      <button>Code überprüfen</button>
+      <button class="btn btn-success form-control">Code überprüfen</button>
     </form>
   </div>
   </div>
