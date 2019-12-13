@@ -1,17 +1,17 @@
 <form [formGroup]="registerForm" (ngSubmit)="register()">
     <div>
       <label for="email">Email:
-        <input type="text" formControlName="email" placeholder="Bitte geben Sie ihre Email ein" required />
+        <input id="email" type="text" formControlName="email" placeholder="Bitte geben Sie ihre Email ein" required />
       </label>
     </div>
     <div>
-      <label for="FirstTimePassword">Passwort:
-        <input type="password" formControlName="FirstTimePassword" placeholder="Bitte geben Sie ihr Passwort ein" required />
+      <label for="firstTimePassword">Passwort:
+        <input id="firstTimePassword" type="password" formControlName="FirstTimePassword" placeholder="Bitte geben Sie ihr Passwort ein" required />
       </label>
     </div>
     <div>
-      <label for="SecondTimePassword">Passwort wiederholen:
-        <input type="password" formControlName="SecondTimePassword" placeholder="Bitte geben Sie ihr Passwort ein" required />
+      <label for="secondTimePassword">Passwort wiederholen:
+        <input id="secondTimePassword" type="password" formControlName="SecondTimePassword" placeholder="Bitte geben Sie ihr Passwort ein" required />
       </label>
     </div>
     <button>Registrieren</button>
