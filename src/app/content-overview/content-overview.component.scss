@@ -1,11 +1,28 @@
+.title{
+  margin-bottom: 40px;
+}
+
+$button-to-content-color:  #1db992;
+.button-to-content:hover{
+    background-color: darken($button-to-content-color, 10%) !important;
+}
+.button-to-content{
+  background-color: $button-to-content-color;
+  margin: 10px;
+  width: 80%;
+}
 
 // css des Loader kommt von https://loading.io/css/ mit leichten Änderungen
+$size-loader: 80px;
 .lds-roller {
-  top: 50%;
-  left: 50%;
+  // Loader soll button ueberdecken
+  z-index: 1;
+  // Loader zentrieren
+  top: calc(50% - (#{$size-loader} * 0.5));
+  left: calc(50% - (#{$size-loader} * 0.5));
   position: fixed;
-  width: 80px;
-  height: 80px;
+  width: $size-loader;
+  height: $size-loader;
 }
 .lds-roller div {
   animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;

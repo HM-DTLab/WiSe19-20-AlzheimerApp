@@ -31,6 +31,19 @@
   margin: 5px 0px;
 }
 
-.btn-success {
+.btn-success{
   margin: 10px 0px;
 }
+
+$back-button-color: #ddd; // grey
+// wenn man ueber back buttn hover wird er dunkler
+.back-button:hover{
+  background-color: darken($back-button-color, 15%) !important;
+}
+
+.back-button{
+  margin: 10px;
+  background-color: $back-button-color !important;
+}
+
+
