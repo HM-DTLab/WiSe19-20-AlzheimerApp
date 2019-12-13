@@ -15,7 +15,7 @@ import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   registerForm : FormGroup;
   codeInputForm : FormGroup;
-  needRegCode : boolean;
+  needRegCode: boolean;
   isInvalid : boolean;
 
   constructor(public authService: AuthorisationService, public router: Router, public formBuilder : FormBuilder) {
