@@ -4,6 +4,7 @@ import { DataServiceService } from '../data-service.service';
 import {TextContentComponent} from '../text-content/text-content.component';
 import {ActivatedRoute, Router} from '@angular/router';
 import { QrCodeInfoService } from '../qr-code-info.service';
+import {QrCodeData} from "../qr-code-data";
 
 @Component({
   selector: 'app-content-overview',
@@ -18,6 +19,8 @@ export class ContentOverviewComponent implements OnInit {
   private id: number;
   private hasText: boolean;
   private contentText: string;
+  private change = false;
+  private newTitle = '';
 
   // Jede Komponente die die Location, also die aktuelle Position Nutzen möchte muss folgendes importieren:
   // import { Location } from '@angular/common';
@@ -52,6 +55,11 @@ export class ContentOverviewComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  putTestInfo() {
+    this.dataServiceService.putQrInfo(this.id, '', this.newTitle, '', this.hasText);
+  }
+
 
   /**
    * Navigiert zur Text-Content Übersicht des QR-Codes

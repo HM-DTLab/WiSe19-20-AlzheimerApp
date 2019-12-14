@@ -10,12 +10,22 @@
   <button (click)="goBack()" class="btn back-button">Neuen QR-Code scannen</button>
 
   <div *ngIf="!error" class="text-center container col-md-8 col-lg-7 col-xl-6">
-    <h1 class="title">{{title}}</h1>
+
+    <div *ngIf="!change">
+      <h1 class="title">{{title}}<button class="btn btn-success" (click)="change = true" style="margin-left: 10px">Titel bearbeiten</button></h1>
+    </div>
+
+<!--    zum testen des PUT Request-->
+    <div *ngIf="change" class="input-group  text-left">
+      Neuen Titel mit Enter bestätigen (danach Seite refreshen)
+      <input [(ngModel)]="newTitle" (keydown.enter)="putTestInfo(); change = false" class="input-group">
+    </div>
 
     <!--falls text vorhanden ist, den button anzeigen lassen-->
     <div *ngIf="hasText" class="">
       <button (click)="goToTextContent()" class="btn button-to-content btn-info">Textinformation abrufen</button>
     </div>
+
     <div *ngIf="!hasText" class="alert alert-info text-left">
       Es wurde noch kein Eintrag zu "{{title}}" erstellt.
     </div>
