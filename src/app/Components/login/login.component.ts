@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthorisationService } from '../../Services/authorisation.service';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
+import { QrCodeGeneratorService } from '../../Services/qr-code-generator.service';
 
 @Component({
   selector: 'app-login',
@@ -14,8 +15,17 @@ import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 export class LoginComponent implements OnInit {
   isInvalid : boolean;
   loginForm : FormGroup;
+  generated : boolean;
 
-  constructor(public authService: AuthorisationService, public router: Router, public formBuilder : FormBuilder) { 
+  @ViewChild("image", {static : false})
+  public img : any;
+
+  constructor(
+    public authService: AuthorisationService,
+    public router: Router, 
+    public formBuilder : FormBuilder,
+    public genServ : QrCodeGeneratorService
+    ) { 
     if (this.authService.isLoggedIn()) { 
       this.router.navigate(['/start']);
       }
@@ -50,5 +60,4 @@ export class LoginComponent implements OnInit {
       this.isInvalid = true;
     });
   }
-
 }
