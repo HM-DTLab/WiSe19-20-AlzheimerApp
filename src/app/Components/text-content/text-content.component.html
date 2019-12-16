@@ -1,10 +1,11 @@
 <!--Durch (click)="goBack()" wird beim Klicken die in text-content.component.ts definierte Funktion aufgerufen-->
-<button (click)="goBack()" class="back-button btn btn-secondary">
-<i class="left"></i>
+<button (click)="goBack()" class="back-button btn">
+  <i class="left"></i>
   Zurück
 </button>
-<h1>{{title}}</h1>
-<p>
+<div class="container col-12 col-sm-12 col-md-12 col-lg-11 col-xl-10">
+  <h1 class="title text-center">{{title}}</h1>
+  <div class="text-content">
     {{content}}
-</p>
-  
+  </div>
+</div>
