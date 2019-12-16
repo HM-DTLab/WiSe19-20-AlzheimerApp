@@ -36,9 +36,7 @@ export class DataServiceService {
    * @param content Neuer Textinformationen
    * @param hasText Ob ein Text zum Qr-code vorhanden ist
    */
-  putQrInfo(id: number, email: string, title: string, content: string, hasText: boolean) {
-    // ToDo: Möglich machen, dass man...
-    //  nur Titel speichert, oder nur Content -> Lambda anpassen?!
+  putQrInfo(id: number, email: string, title: string, content: string) {
     if (content.length < 1) {
       content = ' ';
     }
@@ -54,10 +52,9 @@ export class DataServiceService {
         'username': 'firlus@hm.edu',
         'title': title,
         'contentText': content,
-        'hasText': true
       }
     }
-    console.log('Put-Request Body: ' + body);
+    console.log('Put-Request Body: ' + JSON.stringify(body));
     // Put-Request an Api
     this.http.put(this.apiUrlPut, JSON.stringify(body), {headers: headers}).subscribe(response => console.log(response));
   }
