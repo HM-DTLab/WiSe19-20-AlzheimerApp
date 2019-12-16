@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { DataServiceService } from '../data-service.service';
 import { QrCodeInfoService } from '../qr-code-info.service';
-
+import {AuthorisationService} from '../authorisation.service';
 @Component({
   selector: 'app-text-content',
   templateUrl: './text-content.component.html',
@@ -24,7 +24,8 @@ export class TextContentComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private location: Location,
     private dataService: DataServiceService,
-    private qrCodeInfoService: QrCodeInfoService
+    private qrCodeInfoService: QrCodeInfoService,
+    public authservice:AuthorisationService
   ) {
     /**
      * Holt sich QR-Code-Daten aus QrCodeInfoService
@@ -48,5 +49,9 @@ export class TextContentComponent implements OnInit {
   // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
   goBack():void {
     this.location.back();
+  }
+
+ logout(){
+    this.authservice.logout();
   }
 }

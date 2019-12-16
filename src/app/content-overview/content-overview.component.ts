@@ -4,6 +4,8 @@ import { DataServiceService } from '../data-service.service';
 import {TextContentComponent} from '../text-content/text-content.component';
 import {ActivatedRoute, Router} from '@angular/router';
 import { QrCodeInfoService } from '../qr-code-info.service';
+import {AuthorisationService} from '../authorisation.service';
+
 
 @Component({
   selector: 'app-content-overview',
@@ -27,7 +29,8 @@ export class ContentOverviewComponent implements OnInit {
     private location: Location,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private qrCodeInfoService: QrCodeInfoService
+    private qrCodeInfoService: QrCodeInfoService,
+    public authservice:AuthorisationService
   ) {
     // holt sich id
     this.id = +this.activatedRoute.snapshot.paramMap.get('id');
@@ -74,5 +77,8 @@ export class ContentOverviewComponent implements OnInit {
       }, error => {
         this.error = true;
       });
+  }
+  logout(){
+    this.authservice.logout();
   }
 }

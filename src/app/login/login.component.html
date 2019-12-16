@@ -1,3 +1,4 @@
+<body>
 <h1> LOGIN </h1>
 
 
@@ -12,9 +13,11 @@
       <input type="password" formControlName="password" placeholder="Bitte geben Sie ihr Passwort ein" required />
     </label>
   </div>
-  <button>Log in</button>
+ <button>Log in</button>
 </form>
 <nav>
   <a routerLink="/register">Noch kein Mitglied? Hier registrieren</a>
 </nav>
 <div *ngIf="isInvalid">Login fehlgeschlagen</div>
+
+</body>
