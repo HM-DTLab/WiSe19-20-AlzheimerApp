@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'; 
 import { JwtModule } from "@auth0/angular-jwt";
 import { RegisterComponent } from './register/register.component';
+import { TextContentEditorComponent } from './text-content-editor/text-content-editor.component';
+import { QuillModule } from 'ngx-quill';
 
 const tokenGetter = function (){
   return localStorage.getItem("access_token");
@@ -23,7 +25,8 @@ const tokenGetter = function (){
     TextContentComponent,
     QrCodePageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TextContentEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,7 @@ const tokenGetter = function (){
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    QuillModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
