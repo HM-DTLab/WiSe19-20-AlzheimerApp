@@ -13,13 +13,13 @@ import { TextContentEditorComponent } from './text-content-editor/text-content-e
  * den Content-Overview Komponeneten gelinkt. Redirects sind auch möglich.
  */
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, 
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'start', component: QrCodePageComponent, canActivate: [AuthorisationGuardService] },
   { path: 'overview/:id', component: ContentOverviewComponent, canActivate: [AuthorisationGuardService] },
   { path: 'text-content/:id', component: TextContentComponent, canActivate: [AuthorisationGuardService] },
-  { path: 'text-content-editor', component: TextContentEditorComponent}
+  { path: 'text-content-editor/:id', component: TextContentEditorComponent, canActivate: [AuthorisationGuardService]}
 ];
 
 @NgModule({
