@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { DataServiceService } from '../data-service.service';
-import {TextContentComponent} from '../text-content/text-content.component';
-import {ActivatedRoute, Router} from '@angular/router';
-import { QrCodeInfoService } from '../qr-code-info.service';
+import { DataServiceService } from '../../Services/data-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { QrCodeInfoService } from '../../Services/qr-code-info.service';
 
 @Component({
   selector: 'app-content-overview',
@@ -13,11 +12,10 @@ import { QrCodeInfoService } from '../qr-code-info.service';
 export class ContentOverviewComponent implements OnInit {
 
   // boolean ob angezeigt werden soll, dass Seite noch geladen wird
-  private title: string;
-  private error: boolean;
+  public title: string;
+  public error: boolean;
   private id: number;
-  private hasText: boolean;
-  private contentText: string;
+  public hasText: boolean;
 
   // Jede Komponente die die Location, also die aktuelle Position Nutzen möchte muss folgendes importieren:
   // import { Location } from '@angular/common';
