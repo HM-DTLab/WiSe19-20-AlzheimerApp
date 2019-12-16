@@ -13,6 +13,7 @@
     <!--falls text vorhanden ist, den button anzeigen lassen-->
     <div *ngIf="hasText">
       <button (click)="goToTextContent()" class="btn btn-secondary">Textinformation abrufen</button>
+      <button (click)="goToEditor()" class="btn btn-secondary">Editor-Test-Button: To be removed</button>
     </div>
     <div *ngIf="!hasText">
       Es wurde noch kein Eintrag zu {{title}} erstellt.

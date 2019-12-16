@@ -59,6 +59,10 @@ export class ContentOverviewComponent implements OnInit {
   goToTextContent(): void {
     this.router.navigate(['/text-content/' + this.id]);
   }
+  
+  goToEditor(): void {
+    this.router.navigate(['/text-content-editor/' + this.id]);
+  }
 
   // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
   goBack(): void {
