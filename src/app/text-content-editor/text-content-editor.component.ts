@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { QuillModule } from 'ngx-quill';
 import { QrCodeInfoService } from '../qr-code-info.service';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-text-content-editor',
@@ -16,7 +18,8 @@ export class TextContentEditorComponent implements OnInit {
 
   constructor(
     private qrCodeInfoService: QrCodeInfoService,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {
     if(localStorage.getItem('isEditor') === 'false') {
       this.router.navigate(['/start']);
@@ -30,6 +33,14 @@ export class TextContentEditorComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  goBack() {
+    this.location.back();
+  }
+
+  save() {
+    // TODO call data service
   }
 
 }
