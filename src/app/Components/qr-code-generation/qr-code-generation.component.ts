@@ -7,6 +7,9 @@ import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
   templateUrl: './qr-code-generation.component.html',
   styleUrls: ['./qr-code-generation.component.scss']
 })
+/**
+ * Generiert QR-Codes mithilfe des Services und stellt diese da. Daten für die QR Codes werden über ein Input Feld genommen
+ */
 export class QrCodeGenerationComponent implements OnInit {
 
   public qrCode : any;
@@ -28,6 +31,10 @@ export class QrCodeGenerationComponent implements OnInit {
   }
 
 
+  /**
+   * Generiert einen QR Code und prüft vorher ob wirklich eine Nummer eingegben wurde,
+   * Ruft dann die Methode createImageFromBlob auf um das Bild zu parsen.
+   */
   generate() : void {
     if (this.generationForm.invalid) {
       this.invalidInput = true;
@@ -52,6 +59,10 @@ export class QrCodeGenerationComponent implements OnInit {
     });
   }
 
+  /**
+   * Wandelt einen Blob in ein  Bild um das dann im Image Tag dargestellt wird.
+   * @param blob Blob mit Bilddaten.
+   */
   createImageFromBlob(blob : Blob) : void {
     let reader = new FileReader();
     reader.addEventListener("load", () => {
@@ -61,5 +72,4 @@ export class QrCodeGenerationComponent implements OnInit {
     reader.readAsDataURL(blob);
     this.generated = true;
   }
-
 }
