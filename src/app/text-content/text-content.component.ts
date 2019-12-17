@@ -50,8 +50,4 @@ export class TextContentComponent implements OnInit {
   goBack():void {
     this.location.back();
   }
-
- logout(){
-    this.authservice.logout();
-  }
 }

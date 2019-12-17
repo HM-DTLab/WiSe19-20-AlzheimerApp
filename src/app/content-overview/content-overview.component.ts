@@ -78,7 +78,4 @@ export class ContentOverviewComponent implements OnInit {
         this.error = true;
       });
   }
-  logout(){
-    this.authservice.logout();
-  }
 }
