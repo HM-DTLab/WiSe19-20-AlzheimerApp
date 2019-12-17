@@ -113,8 +113,6 @@ export class AuthorisationService {
   }
 
   logout(){
-    localStorage.removeItem("Access-token");
-    localStorage.removeItem("Id-token");
     localStorage.clear();
     location.reload();
   }

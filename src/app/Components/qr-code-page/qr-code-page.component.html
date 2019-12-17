@@ -4,6 +4,6 @@
     <video #video id="video" height="480" autoplay></video>
 
     <div *ngIf="!permission" class="alert alert-warning">Keine Erlaubnis auf Kamera zuzugreifen, laden Sie die Seiter erneut und erlauben Sie Kamerazugriff falls Sie die App benutzen wollen</div>
+    <button (click)="logout()"class="btn btn-secondary">logout</button>
   </div>
-
 </div>
