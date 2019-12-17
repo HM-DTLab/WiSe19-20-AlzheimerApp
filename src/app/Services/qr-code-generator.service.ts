@@ -14,9 +14,11 @@ export class QrCodeGeneratorService {
   createNewCode(data : string) : Observable<Blob> {
     return Observable.create(observer => {
       this.httpClient.get<Observable<string>>(this.url + '&data=' + data,  {responseType:  'blob' as 'json'} ).subscribe(result => {
-        console.log("Result: ", result);
-        console.log(result);
         observer.next(result);
+        observer.complete();
+      }, (err) => {
+        observer.error(err);
+        observer.complete();
       });
     });
   }

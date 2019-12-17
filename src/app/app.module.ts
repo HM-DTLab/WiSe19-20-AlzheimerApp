@@ -11,6 +11,7 @@ import { TextContentComponent } from './Components/text-content/text-content.com
 import { QrCodePageComponent } from './Components/qr-code-page/qr-code-page.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
+import { QrCodeGenerationComponent } from './Components/qr-code-generation/qr-code-generation.component';
 
 const tokenGetter = function (){
   return localStorage.getItem("access_token");
@@ -23,7 +24,8 @@ const tokenGetter = function (){
     TextContentComponent,
     QrCodePageComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    QrCodeGenerationComponent
   ],
   imports: [
     BrowserModule,

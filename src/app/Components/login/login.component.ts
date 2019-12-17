@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthorisationService } from '../../Services/authorisation.service';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
-import { QrCodeGeneratorService } from '../../Services/qr-code-generator.service';
 
 @Component({
   selector: 'app-login',
@@ -15,15 +14,11 @@ import { QrCodeGeneratorService } from '../../Services/qr-code-generator.service
 export class LoginComponent implements OnInit {
   isInvalid : boolean;
   loginForm : FormGroup;
-  generated : boolean;
-
-  public img : any;
 
   constructor(
     public authService: AuthorisationService,
     public router: Router, 
-    public formBuilder : FormBuilder,
-    public genServ : QrCodeGeneratorService
+    public formBuilder : FormBuilder
     ) { 
     if (this.authService.isLoggedIn()) { 
       this.router.navigate(['/start']);
@@ -38,7 +33,6 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required] 
     });
-    this.generate();
   }
 
   /**
@@ -59,21 +53,5 @@ export class LoginComponent implements OnInit {
     }, (err) => {
       this.isInvalid = true;
     });
-  }
-
-  generate() : void {
-    this.genServ.createNewCode('1').subscribe(result => {
-      console.log(result);
-      this.createImageFromBlob(result);
-    });
-  }
-
-  createImageFromBlob(blob) : void {
-    let reader = new FileReader();
-    reader.addEventListener("load", () => {
-      this.img = reader.result;
-    }, false);
-
-    reader.readAsDataURL(blob);
   }
  }

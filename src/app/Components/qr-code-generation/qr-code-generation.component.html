@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-xl-4 col-lg-5 col-md-7 col-sm-8 col-10 text-center mx-auto ">
+    <h1 class="text-center title"> QR Code Generierung </h1>
+    <form [formGroup]="generationForm" (ngSubmit)="generate()" class="justify-content-center">
+      <div class="form-group">
+        <input type="text" [(ngModel)]="idToBeGenerated" class="form-control" formControlName="idToBeGenerated">
+      </div>
+      <button class="btn btn-success login">QR Code generieren</button>
+
+      <div *ngIf="invalidInput" class="alert alert-danger text-left" style="margin-top: 15px">Bitte geben Sie eine Zahl an!</div>
+    </form>
+
+    <div *ngIf="generated" class="form-group" style="margin-top: 15px">
+      Ihr generierter QR Code zur ID {{idToBeGenerated}}:
+      <div>
+        <img [src]="qrCode" style="margin-top: 15px">
+      </div>
+    </div>
+  </div>
+</div>
