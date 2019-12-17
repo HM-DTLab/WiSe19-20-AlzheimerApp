@@ -111,4 +111,11 @@ export class AuthorisationService {
     const token = localStorage.getItem('Access-token');
     return !this.jwtHelper.isTokenExpired(token);
   }
+
+  logout(){
+    localStorage.removeItem("Access-token");
+    localStorage.removeItem("Id-token");
+    localStorage.clear();
+    location.reload();
+  }
 }
