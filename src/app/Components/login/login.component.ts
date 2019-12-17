@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
   loginForm : FormGroup;
   generated : boolean;
 
-  @ViewChild("image", {static : false})
   public img : any;
 
   constructor(
@@ -39,6 +38,7 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required] 
     });
+    this.generate();
   }
 
   /**
@@ -60,4 +60,20 @@ export class LoginComponent implements OnInit {
       this.isInvalid = true;
     });
   }
-}
+
+  generate() : void {
+    this.genServ.createNewCode('1').subscribe(result => {
+      console.log(result);
+      this.createImageFromBlob(result);
+    });
+  }
+
+  createImageFromBlob(blob) : void {
+    let reader = new FileReader();
+    reader.addEventListener("load", () => {
+      this.img = reader.result;
+    }, false);
+
+    reader.readAsDataURL(blob);
+  }
+ }
