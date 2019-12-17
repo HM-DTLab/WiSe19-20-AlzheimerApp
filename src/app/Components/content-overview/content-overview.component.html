@@ -15,6 +15,7 @@
     <!--falls text vorhanden ist, den button anzeigen lassen-->
     <div *ngIf="hasText" class="">
       <button (click)="goToTextContent()" class="btn button-to-content btn-info">Textinformation abrufen</button>
+      <button (click)="goToEditor()">Eintrag bearbeiten</button>
     </div>
     <div *ngIf="!hasText" class="alert alert-info text-left">
       Es wurde noch kein Eintrag zu "{{title}}" erstellt.
@@ -24,7 +25,6 @@
     <h1 class="alert alert-warning">Hinweis</h1>
     Zu diesem QR-Code sind keine Informationen verfügbar.
   </div>
-  <button (click)="dataServiceService.putQrInfo(5, 'firlus@hm.edu', 'Titel4', 'new Content geändert')">Neuer Eintrag</button>
 </div>
 
 

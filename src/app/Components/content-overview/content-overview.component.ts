@@ -35,7 +35,6 @@ export class ContentOverviewComponent implements OnInit {
         this.hasText = qrCodeData.hasTextContent;
     });
     // in abhängigkeit von ID sich den Titel der Seite holen und boolean ob text vorhanden ist
-    this.getQrCodeInformation(this.id);
   }
 
   /**
@@ -49,6 +48,7 @@ export class ContentOverviewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getQrCodeInformation(this.id);
   }
 
   /**
@@ -56,6 +56,10 @@ export class ContentOverviewComponent implements OnInit {
    */
   goToTextContent(): void {
     this.router.navigate(['/text-content/' + this.id]);
+  }
+  
+  goToEditor(): void {
+    this.router.navigate(['/text-content-editor/' + this.id]);
   }
 
   // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
