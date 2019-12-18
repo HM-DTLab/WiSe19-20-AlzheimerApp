@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'; 
 import { JwtModule } from "@auth0/angular-jwt";
-import { RegisterComponent } from './Components/register/register.component';
-import { TextContentEditorComponent } from './Components/text-content-editor/text-content-editor.component';
 import { QuillModule } from 'ngx-quill';
 
 import { AppComponent } from './Components/app-component/app.component';
@@ -15,6 +13,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { QrCodeGenerationComponent } from './Components/qr-code-generation/qr-code-generation.component';
 import { AppRoutingModule } from './app-routing.module';
+import { TextContentEditorComponent } from './Components/text-content-editor/text-content-editor.component';
 
 const tokenGetter = function (){
   return localStorage.getItem("access_token");
@@ -28,7 +27,7 @@ const tokenGetter = function (){
     QrCodePageComponent,
     LoginComponent,
     RegisterComponent,
-    QrCodeGenerationComponent
+    QrCodeGenerationComponent,
     TextContentEditorComponent
   ],
   imports: [
