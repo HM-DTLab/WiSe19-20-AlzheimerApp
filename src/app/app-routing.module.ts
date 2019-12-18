@@ -7,19 +7,21 @@ import { LoginComponent } from './Components/login/login.component';
 import { AuthorisationGuardService } from './Services/authorisation-guard.service';
 import { RegisterComponent } from './Components/register/register.component';
 import { QrCodeGenerationComponent } from './Components/qr-code-generation/qr-code-generation.component';
+import { TextContentEditorComponent } from './Components/text-content-editor/text-content-editor.component';
 
 /**
  * Objekt definiert die Routen der App, bspw wird bei Eingabe von localhost:4200/overview auf
  * den Content-Overview Komponeneten gelinkt. Redirects sind auch möglich.
  */
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, 
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
   { path: 'start', component: QrCodePageComponent, canActivate: [AuthorisationGuardService] },
   { path: 'generate', component: QrCodeGenerationComponent, canActivate: [AuthorisationGuardService] },
   { path: 'overview/:id', component: ContentOverviewComponent, canActivate: [AuthorisationGuardService] },
-  { path: 'text-content/:id', component: TextContentComponent, canActivate: [AuthorisationGuardService] }
+  { path: 'text-content/:id', component: TextContentComponent, canActivate: [AuthorisationGuardService] },
+  { path: 'text-content-editor/:id', component: TextContentEditorComponent, canActivate: [AuthorisationGuardService]}
 ];
 
 @NgModule({

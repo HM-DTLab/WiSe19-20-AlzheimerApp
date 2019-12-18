@@ -15,7 +15,7 @@ import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   registerForm : FormGroup;
   codeInputForm : FormGroup;
-  needRegCode : boolean;
+  needRegCode: boolean;
   isInvalid : boolean;
 
   constructor(public authService: AuthorisationService, public router: Router, public formBuilder : FormBuilder) {
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       email: ['', Validators.required],
       FirstTimePassword: ['', Validators.required],
-      SecondTimePassword: ['', Validators.required] 
+      SecondTimePassword: ['', Validators.required]
     });
 
     this.codeInputForm = this.formBuilder.group({
@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  //ToDo Meldung, falls Passwort nicht sicher genug ist (z.B. mindestlänge 6?)
   /**
    * Wird nach Eingabe aller Daten aufgerufen und ruft Registrier-Methode des AuthorisationServices auf.
    */
@@ -91,6 +92,6 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['login']);
       }
     });
-  } 
+  }
 
 }

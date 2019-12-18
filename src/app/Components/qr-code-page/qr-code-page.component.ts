@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { BrowserQRCodeReader } from '@zxing/library';
+import { AuthorisationService } from 'src/app/Services/authorisation.service';
 
 @Component({
   selector: 'app-qr-code-page',
@@ -24,7 +25,9 @@ export class QrCodePageComponent implements OnInit {
   public permission: boolean;
 
   // Das Router Objekt wird nachher benötigt, wenn auf die Nachfolgende Seite mit der passenden ID gelinkt werden soll.
-  constructor(private router: Router) { }
+  constructor(private router : Router,
+    public authservice:AuthorisationService) { 
+  }
 
   ngOnInit() {
     this.permission = true;
@@ -91,5 +94,8 @@ export class QrCodePageComponent implements OnInit {
         console.log("Failure in Navigation");
       }
     })
+  }
+  logout(){
+    this.authservice.logout();
   }
 }

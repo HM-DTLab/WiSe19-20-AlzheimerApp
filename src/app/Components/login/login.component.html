@@ -1,20 +1,46 @@
-<h1> LOGIN </h1>
+<div class="container">
 
+  <div class="col-xl-4 col-lg-5 col-md-7 col-sm-8 col-10 text-center mx-auto ">
+      <h1 class="text-center title"> Login </h1>
 
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-  <div>
-    <label for="email">Email:
-      <input type="text" formControlName="email" placeholder="Bitte geben Sie ihre Email ein" required />
-    </label>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="justify-content-center">
+
+      <div class="form-group">
+        <label for="email" class="text-left sign-in-label">
+          E-Mail-Adresse:
+          <input id="email" class="form-control" type="text" formControlName="email"
+                 placeholder="Bitte geben Sie ihre Email ein" required/>
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="password" class="text-left sign-in-label">
+          Passwort:
+          <input class="form-control"
+                 id="password" type="password" formControlName="password"
+                 placeholder="Bitte geben Sie ihr Passwort ein" required/>
+        </label>
+      </div>
+      <div class="justify-content-start text-left">
+        <div>
+          <label for="optRadio" class="radio">
+            <input id="optRadio" type="radio" checked name="optRadio" class="radio"
+                   (change)="userView = !userView; logUserView();">
+            Benutzer-Sicht
+          </label>
+        </div>
+        <div>
+          <label for="optRadio2" class="radio">
+            <input id="optRadio2" type="radio" name="optRadio" class="radio"
+                   (change)="userView = !userView; logUserView();">
+            Bearbeiter-Modus
+          </label>
+        </div>
+      </div>
+      <button class="btn btn-success form-control">Anmelden</button>
+    </form>
+    <div *ngIf="isInvalid" class="alert alert-danger">Login fehlgeschlagen</div>
+    <nav class="login text-left">
+      <a routerLink="/register">Noch kein Mitglied? Hier registrieren</a>
+    </nav>
   </div>
-  <div>
-    <label for="password">Password:
-      <input type="password" formControlName="password" placeholder="Bitte geben Sie ihr Passwort ein" required />
-    </label>
-  </div>
-  <button>Log in</button>
-</form>
-<nav>
-  <a routerLink="/register">Noch kein Mitglied? Hier registrieren</a>
-</nav>
-<div *ngIf="isInvalid">Login fehlgeschlagen</div>
+</div>
