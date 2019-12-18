@@ -12,6 +12,8 @@ import { ContentOverviewComponent } from './Components/content-overview/content-
 import { TextContentComponent } from './Components/text-content/text-content.component';
 import { QrCodePageComponent } from './Components/qr-code-page/qr-code-page.component';
 import { LoginComponent } from './Components/login/login.component';
+import { RegisterComponent } from './Components/register/register.component';
+import { QrCodeGenerationComponent } from './Components/qr-code-generation/qr-code-generation.component';
 import { AppRoutingModule } from './app-routing.module';
 
 const tokenGetter = function (){
@@ -26,6 +28,7 @@ const tokenGetter = function (){
     QrCodePageComponent,
     LoginComponent,
     RegisterComponent,
+    QrCodeGenerationComponent
     TextContentEditorComponent
   ],
   imports: [
