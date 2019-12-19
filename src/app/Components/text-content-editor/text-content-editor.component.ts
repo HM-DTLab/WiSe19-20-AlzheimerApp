@@ -32,7 +32,6 @@ export class TextContentEditorComponent implements OnInit {
       qrCodeData => {
         this.title = qrCodeData.title;
         this.content = qrCodeData.contentText;
-        console.log(qrCodeData);
     });
     this.id = +this.activatedRoute.snapshot.paramMap.get('id');
   }
@@ -45,7 +44,8 @@ export class TextContentEditorComponent implements OnInit {
   }
 
   save() {
-    this.dataService.putQrCodeInformation(this.id, this.title, this.content);
-    this.goBack();
+    this.dataService.putQrCodeInformation(this.id, this.title, this.content).subscribe(_ =>
+      this.goBack()
+    );
   }
 }
