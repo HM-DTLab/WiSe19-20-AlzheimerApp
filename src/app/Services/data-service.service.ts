@@ -36,7 +36,7 @@ export class DataServiceService {
    * @param content Neuer Textinformationen
    * @param hasText Ob ein Text zum Qr-code vorhanden ist
    */
-  putQrInfo(id: number, email: string, title: string, content: string) {
+  putQrCodeInformation(id: number, title: string, content: string) {
     if (content.length < 1) {
       content = ' ';
     }
