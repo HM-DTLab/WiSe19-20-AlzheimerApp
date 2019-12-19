@@ -45,7 +45,7 @@ export class TextContentEditorComponent implements OnInit {
   }
 
   save() {
-    this.dataService.putQrInfo(this.id, 'firlus@hm.edu', this.title, this.content);
+    this.dataService.putQrCodeInformation(this.id, this.title, this.content);
     this.goBack();
   }
 }
