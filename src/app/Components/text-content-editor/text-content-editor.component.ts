@@ -13,6 +13,14 @@ import { DataServiceService } from '../../Services/data-service.service';
 })
 export class TextContentEditorComponent implements OnInit {
 
+  private quillToolbarConfig: Object = {
+    toolbar: [
+      ['bold', 'italic', 'underline'],
+      [{ 'header': 1 }, { 'header': 2 }],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }]
+    ]
+  };
+
   private hasText: boolean;
   private title: string;
   private content: string;
