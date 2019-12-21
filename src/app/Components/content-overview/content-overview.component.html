@@ -1,4 +1,4 @@
-<div *ngIf="isLoadingFromDatabase()" class="lds-roller">
+<div *ngIf="this.dataServiceService.isGetting" class="lds-roller">
   <div></div>
   <div></div>
   <div></div>
@@ -6,7 +6,7 @@
   <div></div>
   <div></div>
 </div>
-<div *ngIf="!isLoadingFromDatabase()">
+<div *ngIf="!this.dataServiceService.isGetting">
   <button (click)="goBack()" class="btn back-button">Neuen QR-Code scannen</button>
 
   <div *ngIf="!error" class="text-center container col-md-8 col-lg-7 col-xl-6">

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { QrCodeData } from './qr-code-data';
 import { QrCodeInfoService } from './qr-code-info.service';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ import { QrCodeInfoService } from './qr-code-info.service';
 export class DataServiceService {
 
   private apiUrl = 'https://plxmvji4k4.execute-api.eu-central-1.amazonaws.com/api';
-  private apiUrlPut = 'https://plxmvji4k4.execute-api.eu-central-1.amazonaws.com/api/put-qr-code-information';
+  isGetting = false;
 
   constructor(
     private http: HttpClient,
@@ -23,10 +24,17 @@ export class DataServiceService {
    * @param id ID des QR-Codes
    */
   getQrCodeInformation(id: number): Observable<QrCodeData> {
+    this.isGetting = true;
+    console.log('Loading...');
+    
     const headers = new HttpHeaders().set('Authorization', localStorage.getItem('Id-token'));
-
     const url = this.apiUrl.concat('?id=').concat(id.toString());
-    return this.http.get<QrCodeData>(url, {headers});
+    const response = this.http.get<QrCodeData>(url, {headers});
+    response.subscribe(
+      _ => this.isGetting = false, // Remove loading animation as soon as observable returns value
+      _ => this.isGetting = false  // Do the same on error
+    );
+    return response;
   }
 
   /**
@@ -38,25 +46,19 @@ export class DataServiceService {
    * @param content Neuer Textinformationen
    * @param hasText Ob ein Text zum Qr-code vorhanden ist
    */
-  putQrCodeInformation(id: number, title: string, content: string) {
+  putQrCodeInformation(id: number, title: string, content: string): Observable<Object> {
     if (content.length < 1) {
       content = ' ';
     }
-
-    // Header fuer HTTP-Request
     const headers = new HttpHeaders().set('Authorization', localStorage.getItem('Id-token'))
       .set('Content-Type', 'application/json');
 
-    // Body des Requests (Uebergebene Parameter an die api)
     const body = {
         id,
         title,
         contentText: content,
       };
     console.log('Put-Request Body: ' + JSON.stringify(body));
-    // Put-Request an Api
-    this.http.put(this.apiUrl, JSON.stringify(body), {headers}).subscribe(response =>
-      this.getQrCodeInformation(id).subscribe(qrCodeData =>
-        this.qrCodeInfoService.updateQrCodeData(qrCodeData)));
+    return this.http.put(this.apiUrl, JSON.stringify(body), {headers});
   }
 }
