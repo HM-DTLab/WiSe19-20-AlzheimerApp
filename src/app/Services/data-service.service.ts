@@ -61,4 +61,12 @@ export class DataServiceService {
     console.log('Put-Request Body: ' + JSON.stringify(body));
     return this.http.put(this.apiUrl, JSON.stringify(body), {headers});
   }
+  /**
+   * 
+   */
+  getNextFreeId(): Observable<Object> {
+    const headers = new HttpHeaders().set('Authorization', localStorage.getItem('Id-token'))
+      .set('Content-Type', 'application/json');
+    return this.http.get(`${ this.apiUrl }/free-id`, {headers})
+  }
 }
