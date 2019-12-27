@@ -15,13 +15,22 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
  */
 export class QrCodeGenerationComponent implements OnInit {
 
+  // PNG Bild des QR Codes.
   public qrCode : any;
+
+  // Boolean für ngIf ob ein QR Code erfolgreich erzeugt wurde.
   public generated : boolean;
-  public newTitle : number;
+
+  // Warnhinweis für Illegale Eingaben
   public invalidInput : boolean;
+
+  // Nächst freie Id, wird nach Anfrage ausgelesen und entsprechend geändert.
   public newId : number = -1;
+
+  // URL für den Download, wird zwar erst nach QR Code erzeugung initialisert, dkann aber auch erst dann geklickt werden
   public fileUrl : SafeResourceUrl;
 
+  // Form für die Eingabe
   public generationForm : FormGroup;
 
   constructor(
@@ -78,7 +87,7 @@ export class QrCodeGenerationComponent implements OnInit {
   }
 
   /**
-   * Wandelt einen Blob in ein  Bild um das dann im Image Tag dargestellt wird.
+   * Wandelt einen Blob in ein  Bild um das dann im Image Tag dargestellt wird. Zusätzlich wird der Link für den Download angepasst.
    * @param blob Blob mit Bilddaten.
    */
   createImageFromBlob(blob : Blob) : void {
