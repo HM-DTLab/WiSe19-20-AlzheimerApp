@@ -100,6 +100,9 @@ export class QrCodePageComponent implements OnInit {
     })
   }
 
+  /**
+   * Linkt auf die Generierungsseite.
+   */
   goToGeneration() : void {
     // Der Stream stoppt
     this.localstream.getTracks().forEach(element => {
@@ -111,6 +114,9 @@ export class QrCodePageComponent implements OnInit {
     });
   }
 
+  /**
+   * Loggt den actuellen Benutzer aus und leert den kompletten (!) localStorage.
+   */
   logout(){
     this.authservice.logout();
   }
