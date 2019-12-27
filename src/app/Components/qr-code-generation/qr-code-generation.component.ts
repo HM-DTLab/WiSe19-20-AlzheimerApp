@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { QrCodeGeneratorService } from '../../Services/qr-code-generator.service';
 import { DataServiceService } from '../../Services/data-service.service';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-qr-code-generation',
@@ -19,6 +20,7 @@ export class QrCodeGenerationComponent implements OnInit {
   public newTitle : number;
   public invalidInput : boolean;
   public newId : number = -1;
+  public fileUrl : SafeResourceUrl;
 
   public generationForm : FormGroup;
 
@@ -26,7 +28,8 @@ export class QrCodeGenerationComponent implements OnInit {
     private generationService : QrCodeGeneratorService,
     public formBuilder : FormBuilder,
     private dataService : DataServiceService,
-    private router : Router
+    private router : Router,
+    private sanitizer: DomSanitizer
   ) { 
     if (localStorage.getItem('isEditor') == 'false') {
       this.router.navigate(['start'])
@@ -66,6 +69,7 @@ export class QrCodeGenerationComponent implements OnInit {
 
     this.generationService.createNewCode(this.newId.toString()).subscribe(result => {
       this.createImageFromBlob(result);
+      this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(result));
       this.invalidInput = false;
     }, (err) => {
       this.invalidInput = true;
@@ -87,7 +91,11 @@ export class QrCodeGenerationComponent implements OnInit {
     this.generated = true;
   }
 
+  /**
+   * Navigiert zur Overview Komponente.
+   */
   goToOverview() : void {
     this.router.navigate(['/overview/' + this.newId])
   }
 }
+
