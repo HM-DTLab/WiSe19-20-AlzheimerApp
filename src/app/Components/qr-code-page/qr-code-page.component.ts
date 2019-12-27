@@ -24,9 +24,13 @@ export class QrCodePageComponent implements OnInit {
   // Falls keine Erlaubnis auf Kamerazugriff gegeben wird zeigt die Seite einen Infotext.
   public permission: boolean;
 
+  // Bearbeitermodus Status auslesen
+  public isEditor : boolean;
+
   // Das Router Objekt wird nachher benötigt, wenn auf die Nachfolgende Seite mit der passenden ID gelinkt werden soll.
   constructor(private router : Router,
     public authservice:AuthorisationService) { 
+      this.isEditor = localStorage.getItem('isEditor') == 'true';
   }
 
   ngOnInit() {
