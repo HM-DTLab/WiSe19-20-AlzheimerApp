@@ -2,10 +2,8 @@ import { Injectable, Optional } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 import { QrCodeData } from './qr-code-data';
 import { QrCodeInfoService } from './qr-code-info.service';
-import { TouchSequence } from 'selenium-webdriver';
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +58,15 @@ export class DataServiceService {
       };
     console.log('Put-Request Body: ' + JSON.stringify(body));
     return this.http.put(this.apiUrl, JSON.stringify(body), {headers});
+  }
+
+   /**
+   * 
+   */
+  async getNextFreeId(): Promise<Object> {
+    const headers = new HttpHeaders().set('Authorization', localStorage.getItem('Id-token'))
+      .set('Content-Type', 'application/json');
+    const response = await this.http.get(`${ this.apiUrl }/free-id`, {headers}).toPromise();
+    return response;
   }
 }

@@ -72,7 +72,7 @@ export class ContentOverviewComponent implements OnInit, OnDestroy {
   // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
   goBack(): void {
     // hier nicht zurück, sondern zu QR-Code scanner
-    this.location.back();
+    this.router.navigate(['start']);
   }
 
   getQrCodeInformation(id: number) {
