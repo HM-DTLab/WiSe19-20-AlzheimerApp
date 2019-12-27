@@ -99,6 +99,18 @@ export class QrCodePageComponent implements OnInit {
       }
     })
   }
+
+  goToGeneration() : void {
+    // Der Stream stoppt
+    this.localstream.getTracks().forEach(element => {
+      element.stop();
+    });
+
+    this.router.navigate(['generate']).then(_ => {
+      window.location.reload();
+    });
+  }
+
   logout(){
     this.authservice.logout();
   }
