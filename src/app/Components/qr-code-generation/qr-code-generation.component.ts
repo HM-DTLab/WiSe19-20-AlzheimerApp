@@ -45,25 +45,11 @@ export class QrCodeGenerationComponent implements OnInit {
     }
   }
 
-
   ngOnInit() {
     this.generationForm = this.formBuilder.group({
       newTitle: ['', Validators.required]
     });
-  }
-
-
-  /**
-   * Generiert einen QR Code und prüft vorher ob wirklich eine Nummer eingegben wurde,
-   * Ruft dann die Methode createImageFromBlob auf um das Bild zu parsen.
-   */
-   async generate() : Promise<void> {
-    if (this.generationForm.invalid) {
-      this.invalidInput = true;
-      return;
-    }
-    let title : string = this.generationForm.controls.newTitle.value;
-    await this.dataService.getNextFreeId().then((result) => {
+    this.dataService.getNextFreeId().subscribe((result) => {
       this.newId = result['nextFreeId'];
       console.log("Nächste freie ID: ", result['nextFreeId']);
     }, (err) => {
@@ -71,11 +57,22 @@ export class QrCodeGenerationComponent implements OnInit {
       this.invalidInput = true;
       return;
     });
+  }
+
+  /**
+   * Generiert einen QR Code und prüft vorher ob wirklich eine Nummer eingegben wurde,
+   * Ruft dann die Methode createImageFromBlob auf um das Bild zu parsen.
+   */
+   generate() : Promise<void> {
+    if (this.generationForm.invalid) {
+      this.invalidInput = true;
+      return;
+    }
+    let title : string = this.generationForm.controls.newTitle.value;
         
     this.dataService.putQrCodeInformation(this.newId , title, 'Dies ist nur ein Test').subscribe((result) => {
       console.log(result);
     });
-
     this.generationService.createNewCode(this.newId.toString()).subscribe(result => {
       this.createImageFromBlob(result);
       this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(result));
@@ -107,4 +104,3 @@ export class QrCodeGenerationComponent implements OnInit {
     this.router.navigate(['/overview/' + this.newId])
   }
 }
-

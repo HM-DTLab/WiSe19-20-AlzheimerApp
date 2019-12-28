@@ -61,12 +61,11 @@ export class DataServiceService {
   }
 
    /**
-   * 
+   * Stellt eine Anfrage was die nächste freie ID für einen Benutzer ist.
    */
-  async getNextFreeId(): Promise<Object> {
+  getNextFreeId(): Observable<Object> {
     const headers = new HttpHeaders().set('Authorization', localStorage.getItem('Id-token'))
       .set('Content-Type', 'application/json');
-    const response = await this.http.get(`${ this.apiUrl }/free-id`, {headers}).toPromise();
-    return response;
+    return this.http.get(`${ this.apiUrl }/free-id`, {headers});
   }
 }
