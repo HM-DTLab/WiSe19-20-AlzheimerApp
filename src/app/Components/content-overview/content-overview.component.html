@@ -15,7 +15,9 @@
     <!--falls text vorhanden ist, den button anzeigen lassen-->
     <div *ngIf="hasText" class="">
       <button (click)="goToTextContent()" class="btn button-to-content btn-info">Textinformation abrufen</button>
-      <button (click)="goToEditor()">Eintrag bearbeiten</button>
+      <div *ngIf="isEditor">
+        <button (click)="goToEditor()">Eintrag bearbeiten</button>
+      </div>
     </div>
     <div *ngIf="!hasText" class="alert alert-info text-left">
       Es wurde noch kein Eintrag zu "{{title}}" erstellt.
