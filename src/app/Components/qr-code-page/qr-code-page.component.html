@@ -1,10 +1,18 @@
+<div class="row">
+  <div class="col-12">
+    <button (click)="logout()" class="btn btn-danger float-right">Abmelden</button>
+  </div>
+</div>
+
 <div id="app">
   <div class="justify-content-center container col-12 col-sm-10 col-lg-8 col-xl-6">
     <h1 class="title text-center">QR-Code Scannen</h1>
     <video #video id="video" height="480" autoplay></video>
     <div *ngIf="isEditor">
-      <button (click)="goToGeneration()" class="btn btn-success login">Neuen Eintrag erstellen</button></div>
-      <button (click)="logout()" class="back-button btn">Logout</button>
+      <button (click)="goToGeneration()" class="btn btn-success login"  style="width: 100%">Neuen Eintrag erstellen</button>
     </div>
-    <div *ngIf="!permission" class="alert alert-warning">Keine Erlaubnis auf Kamera zuzugreifen, laden Sie die Seiter erneut und erlauben Sie Kamerazugriff falls Sie die App benutzen wollen</div>
+    <div *ngIf="!permission" class="alert alert-warning">Keine Erlaubnis auf Kamera zuzugreifen, laden Sie die Seite
+      erneut und erlauben Sie den Kamerazugriff falls Sie die App benutzen wollen.
+    </div>
   </div>
+</div>
