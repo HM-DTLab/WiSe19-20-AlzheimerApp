@@ -17,6 +17,7 @@ export class ContentOverviewComponent implements OnInit, OnDestroy {
   public error: boolean;
   private id: number;
   public hasText: boolean;
+  public isEditor: boolean;
 
   private qrCodeDataSubscription: Subscription;
 
@@ -29,7 +30,9 @@ export class ContentOverviewComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private qrCodeInfoService: QrCodeInfoService
-  ) {}
+  ) {
+    this.isEditor = localStorage.getItem('isEditor') === 'true';
+  }
 
   /**
    * Prüft ob Titel geladen wurde.
@@ -64,15 +67,17 @@ export class ContentOverviewComponent implements OnInit, OnDestroy {
   goToTextContent(): void {
     this.router.navigate(['/text-content/' + this.id]);
   }
-  
+
   goToEditor(): void {
     this.router.navigate(['/text-content-editor/' + this.id]);
   }
 
-  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
+  /**
+   * Navigiert zur "Qr-Code Scannen" Seite.
+   */
   goBack(): void {
-    // hier nicht zurück, sondern zu QR-Code scanner
-    this.location.back();
+    // zu QR-Code scanner
+    this.router.navigate(['/start/']);
   }
 
   getQrCodeInformation(id: number) {

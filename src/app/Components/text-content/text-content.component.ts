@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import {ActivatedRoute, Router} from '@angular/router';
 import { QrCodeInfoService } from '../../Services/qr-code-info.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class TextContentComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private location: Location,
+    private router: Router,
     private qrCodeInfoService: QrCodeInfoService
   ) {
     /**
@@ -32,8 +31,10 @@ export class TextContentComponent implements OnInit {
   ngOnInit() {
   }
 
-  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
-  goBack():void {
-    this.location.back();
+  /**
+   * Navigiert zur "Content-Overview"-Seite.
+   */
+  goBack(): void {
+    this.router.navigate(['/overview/' + this.id]);
   }
 }
