@@ -40,6 +40,14 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  /**
+   * Navigiert zur "Login" Seite.
+   */
+  goBack(): void {
+    // zu QR-Code scanner
+    this.router.navigate(['/login/']);
+  }
+
   //ToDo Meldung, falls Passwort nicht sicher genug ist (z.B. mindestlänge 6?)
   /**
    * Wird nach Eingabe aller Daten aufgerufen und ruft Registrier-Methode des AuthorisationServices auf.
