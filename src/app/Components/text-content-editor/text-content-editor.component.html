@@ -6,8 +6,7 @@
 <button (click)="save()" class="btn">
     Speichern
 </button>
-
-<input type="text" [(ngModel)]="title"> 
+<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Title" [(ngModel)]="title" >
 
 <quill-editor [(ngModel)]="content" [(modules)]="quillToolbarConfig">
 </quill-editor>
