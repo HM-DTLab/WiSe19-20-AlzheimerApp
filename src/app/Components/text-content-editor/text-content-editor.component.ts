@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuillModule } from 'ngx-quill';
 import { QrCodeInfoService } from '../../Services/qr-code-info.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+// import { Location } from '@angular/common';
 import { DataServiceService } from '../../Services/data-service.service';
 
 
@@ -29,7 +29,7 @@ export class TextContentEditorComponent implements OnInit {
   constructor(
     private qrCodeInfoService: QrCodeInfoService,
     private router: Router,
-    private location: Location,
+    // private location: Location,
     private dataService: DataServiceService,
     private activatedRoute: ActivatedRoute
   ) {
@@ -47,8 +47,11 @@ export class TextContentEditorComponent implements OnInit {
   ngOnInit() {
   }
 
-  goBack() {
-    this.location.back();
+  /**
+   * Navigiert zur "Content-Overview"-Seite.
+   */
+  goBack(): void {
+    this.router.navigate(['/overview/' + this.id]);
   }
 
   save() {
