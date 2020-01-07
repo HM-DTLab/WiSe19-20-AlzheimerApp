@@ -24,9 +24,13 @@ export class QrCodePageComponent implements OnInit {
   // Falls keine Erlaubnis auf Kamerazugriff gegeben wird zeigt die Seite einen Infotext.
   public permission: boolean;
 
+  // Bearbeitermodus Status auslesen
+  public isEditor : boolean;
+
   // Das Router Objekt wird nachher benötigt, wenn auf die Nachfolgende Seite mit der passenden ID gelinkt werden soll.
   constructor(private router : Router,
     public authservice:AuthorisationService) { 
+      this.isEditor = localStorage.getItem('isEditor') == 'true';
   }
 
   ngOnInit() {
@@ -95,6 +99,24 @@ export class QrCodePageComponent implements OnInit {
       }
     })
   }
+
+  /**
+   * Linkt auf die Generierungsseite.
+   */
+  goToGeneration() : void {
+    // Der Stream stoppt
+    this.localstream.getTracks().forEach(element => {
+      element.stop();
+    });
+
+    this.router.navigate(['generate']).then(_ => {
+      window.location.reload();
+    });
+  }
+
+  /**
+   * Loggt den actuellen Benutzer aus und leert den kompletten (!) localStorage.
+   */
   logout(){
     this.authservice.logout();
   }
