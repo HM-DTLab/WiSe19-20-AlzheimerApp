@@ -64,15 +64,17 @@ export class ContentOverviewComponent implements OnInit, OnDestroy {
   goToTextContent(): void {
     this.router.navigate(['/text-content/' + this.id]);
   }
-  
+
   goToEditor(): void {
     this.router.navigate(['/text-content-editor/' + this.id]);
   }
 
-  // Nach initialisieren des Location Objektes kann es bspw. für einen back Button genutzt werden
+  /**
+   * Navigiert zur "Qr-Code Scannen" Seite.
+   */
   goBack(): void {
-    // hier nicht zurück, sondern zu QR-Code scanner
-    this.location.back();
+    // zu QR-Code scanner
+    this.router.navigate(['/start/']);
   }
 
   getQrCodeInformation(id: number) {
