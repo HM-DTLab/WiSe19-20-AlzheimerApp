@@ -1,14 +1,14 @@
 <div class="container">
-  <div class="col-xl-4 col-lg-5 col-md-7 col-sm-8 col-10 text-center mx-auto ">
+  <div class="ccol-xl-4 col-lg-5 col-md-7 col-sm-8 col-10 text-center mx-auto">
     <h1 class="text-center title"> Neue Erklärung erstellen </h1>
     <form [formGroup]="generationForm" (ngSubmit)="generate()" class="justify-content-center">
       <div class="form-group">
-        <label> Geben Sie bitte den Titel ein:
+        <label class="text-left"> Geben Sie bitte den Titel ein:
           <input type="text" class="form-control" formControlName="newTitle">
+          <button id="generateQrCode" class="btn btn-success login form-control">Erstellen</button>
         </label>
-       
+
       </div>
-      <button class="btn btn-success login">Erstellen</button>
 
       <div *ngIf="invalidInput" class="alert alert-danger text-left" style="margin-top: 15px">Bitte geben Sie eine Zahl an!</div>
     </form>
