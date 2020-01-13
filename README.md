@@ -1,3 +1,5 @@
+# ToDo: eingefügte, stichpunkthaltige Texte überarbeiten. Nicht vorhandene ergänzen und Fotos an passender Stelle einfügen (sind in Ordner documents_development_process in branch 047-readme)
+
 # Informationshilfe für Alzheimererkrankte
 
 # AlzheimerApp
@@ -83,16 +85,25 @@ Falls Qr-Code verloren geht, kann er einfach erneut ausgedruckt werden.
 
 ## Bedienung der Anwendung
 
-hier wichtigsten Fotos einfügen und erklären.
+ToDo: hier wichtigsten Fotos einfügen und erklären.
 
 (Anmelden(Bearbeiter-BenutzerSicht), scannen/neuen Qr-code erstellen, Qr-Code Informationen abrufen/bearbeiten)
 
 ## Zusammenfassung
 
+ToDo hier noch text einfügen
+
 ### Erstellte Dokumente bei der Projektplanung
 
-[Angular CLI](https://github.com/angular/angular-cli) 
+ToDo hier noch text einfügen
 
+[Wireframes](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/Wireframes.pptx) 
+
+[Press Release](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/Press_Release%20Gruppe%204.pdf)
+
+[User Stories](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/UserStories.pdf)
+
+[FAQs](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/FAQs%20Softwareengeneering.pdf)
 
 
 
