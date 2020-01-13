@@ -23,6 +23,7 @@ Unsere Aufgabe war es eine Anwendung zu Entwickeln, die Erkrankten den Alltag er
 
 ## Idee
 
+(die Idee und der rest kann auch ganz anders gestaltet werden.)
 
 Die Idee war es die Funktionsweise von Notizzetteln und Post-its zu erweitern, indem man sie mit dem Digitalen vereint.
 
