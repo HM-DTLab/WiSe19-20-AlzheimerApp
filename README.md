@@ -95,7 +95,7 @@ ToDo hier noch text einfügen
 
 ### Erstellte Dokumente bei der Projektplanung
 
-ToDo hier noch text einfügen
+ToDo hier noch text einfügen. wireframes vll auch als .pdf und nicht als .pptx
 
 [Wireframes](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/Wireframes.pptx) 
 
@@ -107,6 +107,6 @@ ToDo hier noch text einfügen
 
 
 
-
+ToDo: löschen
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
