@@ -1,111 +1,3 @@
-# ToDo: eingefÃ¼gte, stichpunkthaltige Texte Ã¼berarbeiten/neuschreiben. Nicht vorhandene ergÃ¤nzen und Fotos an passender Stelle einfÃ¼gen (sind in Ordner documents_development_process in branch 047-readme)
-
-# AlzheimerApp, eine Informations- und GedÃ¤chtnishilfe fÃ¼r Alzheimererkrankte
-
-## Algemeines
-(aus press-release kopiert)
-
-In einem Projekt mit Beteiligung von Amazon Web Services und der Deutschen Alzheimergesellschaft wurde von einer Gruppe aus sechs Studenten eine App entwickelt,
-die Alzheimer-Patienten im Alltag helfen soll.
-
-## Ãœbersicht
-
-(Zum teil auch aus pressrelease)
-
-Die Entwickelte Anwendung arbeitet mit Hilfe von QR-Codes, welche an AlltagsgegenstÃ¤nden angebracht sind 
-(beispielsweise Kaffeemaschine, Fernseher usw.) und stellt so ErklÃ¤rungen und Bedienungsanleitungen bereit. Alles was man sich nicht merken kann/will, kann dadurch digital gespeichert werden und physisch an einem gewÃ¼nschten Ort/Gegenstand befestigt werden.
-
-## Problem
-
-Bereits nicht alzheimererkrante Menschen benÃ¶tigen Notizen um sich an alles erinnnern zu kÃ¶nnen.
-Mit fortschreitender Krankheit werden immer Umfangreichere Notizen/Erinnerungen benÃ¶tigt, damit man den Alltag wie gewÃ¼nscht meistern kann.
-Unsere Aufgabe war es eine Anwendung zu Entwickeln, die Erkrankten den Alltag erleichtert indem die Anwendung alles was die Patienten sich nicht merken kÃ¶nnen digital speichert. Die Informationen werden durch einen qr-Code auch physisch zugÃ¤nglich gemacht.
-
-## Idee
-
-(die Idee und der rest kann auch ganz anders gestaltet werden.)
-
-Die Idee war es die Funktionsweise von Notizzetteln und Post-its zu erweitern, indem man sie mit dem Digitalen vereint.
-
-Die Anwendung soll die Vorteile dieser Formen der Informationsspeicherung vereinen und die Nachteile minimieren.
-
-**Post-its**
- 
- Vorteile:
- + klein und handlich
- + Information kann direkt an Ort/Gegenstand angebracht werden, an dem sie benÃ¶tigt wird
- 
-
- Nachteile:
- - wenig platz fÃ¼r Informationen
- - nur Textinhalt mÃ¶glich
- - "bei Verlust weg"
-
-**Notizzettel**
- 
- Nachteile:
- - unhandlich
- - durch Handschrift schnell unÃ¼bersichtlich bei einer vollgeschriebenen Seite
- - nur Textinhalt mÃ¶glich
- - "bei Verlust weg"
-
- Vorteile:
- + meist ausreichend Platz
-
-**Digital**
-
- Vorteile:
- - annÃ¤hernd unbegrenzter speicher
- - ebenso Bilder mÃ¶glich sowie Audio- und Video-Inhalte
- - groÃŸzahl an Informationen kann durch gutes Layout trotzdem Ã¼bersichtlich sein
-
- Nachteile:
- - Bedienbarkeit kann schnell zu komplex sein
- - Zugriff auf gewÃ¼nschte Inhalte teilweise unpraktisch
-
-
-=> es wurde eine LÃ¶sung gesucht, die ...
-
-- handlich ist
-- Ã¼bersichtlich ist
-- Information direkt an dem betroffenem Gegenstand zur VerfÃ¼gung stellen kann
-- bei Verlust die Informationen einfach wiederhergestellen kann
-- mehr Informationen beinhalten kann
-- andere Informationsformate unterstÃ¼tzt
-- einfach zu bedienen ist
-
-## LÃ¶sung
-
-Die meisten dieser Punkte vereinigte eine LÃ¶sung bei der die Informationen in Text-, Audio-, und Videoformation online gespeichert werden kann. 
-Wobei die zuvor gespeicherten Informationen physisch, in Form eines Qr-Codes an einem beliebigen Gegenstand befestigt werden.
-Dabei wurde darauf geachtet, dass die Erstelleung eines neuen Qr-Codes in mÃ¶glichst wenig Schritten zu realisieren ist. Dadurch sollen nicht nur Betreuer, sondern auch die Patienten selbst neue Qr-Codes erstellen kÃ¶nnen.
-Durch das Scannen eines Qr-Codes gelang man direkt zu dessen Informationen, die online hinterlegt wurden. (=> leichte bedienung)
-Falls ein Qr-Code verloren geht, kann dieser erneut ausgedruckt werden.
-
-## Bedienung der Anwendung
-
-ToDo: hier wichtigsten Fotos einfÃ¼gen und erklÃ¤ren.
-
-(Anmelden(Bearbeiter-BenutzerSicht), scannen/neuen Qr-code erstellen, Qr-Code Informationen abrufen/bearbeiten)
-
-## Zusammenfassung
-
-ToDo hier noch text einfÃ¼gen
-
-### Erstellte Dokumente bei der Projektplanung
-
-ToDo hier noch text einfÃ¼gen (Die Begirffe in einem FlieÃŸtext verwenden, in dem kurz erklÃ¤rt wird warum man sie erstellt hat). wireframes vll auch als .pdf und nicht als .pptx
-
-[Wireframes](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/Wireframes.pptx) 
-
-[Press Release](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/Press_Release%20Gruppe%204.pdf)
-
-[User Stories](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/UserStories.pdf)
-
-[FAQs](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/FAQs%20Softwareengeneering.pdf)
-
-
-
-ToDo: lÃ¶schen
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+N€èz)àyø-zËbrnžKaj[bäÞÆ×›z¶«mè­zçzë†·¢méÍ‰Èm¾Šájw^ç«‚|ÞžéÝ‹h±©éjË×«J×¥•ç¢øžÈ§v)Î­ÙÞ­Úºg§¶Ç^½éh¦g§¶šèqë,Švëjw!ÓŽëy§fx	s…è¦z°)¥è§x‰ß¢¹š¶*'²éÝç\†Ùâ²¥}çë\áz)ž­êä­©äµà%éžŠw¬jë)­ë,­é^jÇ¤¢˜ž®Ò'z)Þ˜úèé-š+Az×¢–(.žèœ	šÎ‰Öy´ž®øœzË§u×«ë­±È^œ	s…è¦z¸±ée±ÈZ~Ü.­×¯¢w¢êÆ®êiy«¬±ç!±+nuéízw¢à)¥éíÂ'$z[]‰à%Î¢™êÏjØžž×§Š`%–Ö …é_z{(–VÞ®Èœ†Önš×¢•«œ…«¬¦·¬²·¥y«'„žÜ"rG¥µà'ÁéÝºx­·¢µëfŠÑâ•÷¯¢t
+‡^³¥ršœ	eµ¨,èžËguéÚž›­§!¶È§u·¢²˜ž–ÌŠÇŠi÷Þzf¬r§xW«žÇ¡z»¬ÂéÝ²×¥–Û(¹%®éàz{§t‰éîžžW¢¶éàzvÞ­è­Y^³¬™©ì‰Èg‰Èm™êäzyžðŠYdjyÝiÛ«rb‚+Z–¬¥èœ…êíÁêÝz{§v˜r²+…©ÞŠw¦ì'±Èmzs«·ñžéìµ©ÝmçÞ²Ø ·«uéÏ®†åz`^­è­²xœ†Ö¥Î¢™êÞ®JÚž×Œz{…éÛz{béÍ¢Ø³z{¦²'!jv¥•ë®)çêçÎé'éÌŠ×è®Û†·¢µéÝz²«jy!z+pz·^ž)¦zµ&}©à­èœ…êÞ6‹bÍéÿ¸§êîž§méíŠ]jh­™©Ýzp%–Ö Â' {	ìrfz+-z¹äjyÔžÇ«xŸ¦ÞÁªÞ±è§x	ðzwnžî{p‰É–wbxJä­©äµéÝzp%–Ö z¹^‰Èmz»b×¦v'€Ÿ§véàjY^³¬v'jØžž×§²'!ž'!¶g«‘éäžw§v("µ©l¥èœ…êí'ˆú+™«b¢w§ÁêÝzwn­È^Šw§ª°¨uæ®raÊÈ¬rî‚x%‰È`zfœ†Òyçbx‡^zéÝuêëzËdjyÚ¹È`j|Ú×«²¬µ©mzÜ­×§'ˆuç°j·¬v'…ºy-Š‰ìÁè¬zú'6‹bÏ7­µégºwO¢Ëb¶Ìîz¼Š×«ž)ÝzišžÈžš+]z`â‚+Z•éïz·¢žÐâx	ðzwnž(–WbyZ+µè¥yØž±êÅ¢¹ž×«"wè®f­Š‰ì²—¢r«ºx/z·¢éî×bxÖœ†×¢•é¢ž)¢z·§>‹-ŠÛ¢»^ŠW¾’W¢žéÝ…©Ý–'!ø‰ß¢¹š¶*'‘©çv*Þ’Ö§:»èžËZÖ§æëiÈmÁêÝzv§ué¬‰æÞžØ ·«tÖœ†×¢•ìž()•«s~²'~ŠæjØ¨éçº´ÞÆØ§…©mš	brÞ‰W«–ë-Áè¢Ø³ÍëmzSZr^ŠW®ž§vXœ…Û«rÚÛ†¸Ÿ¶Ç!éeºvÞ®Èœ†ÙbrÞ‰è§z»è–X±Èk‰æÞéÒz+^žêÓ{bž¥¶h%‰È[z%^®[¬· VŠíz)^úg¢²Ö®²·¢r§tùZ·0â‚+Z•Z+µè¥y©ç…êçvéÛz
+ÞŸ;^®Ê^‰È^­æÞžÊŠW^®h%‰Èl£žçb¢éÝV'^ ‰áj[^‚º3jZœ‰ß¢¹š¶*'zyžwn­È`º×¬-¬¨ºÛk¢ÜÝzfÞ®Èœ†ÙbrŠsZr^ŠWyØž¶«‘è­‘©ç±ÈgzYsºJ&¦W±±è§fè+‰÷Ú¹øÂ{†×ˆž¥µë^Š\ŠÇ®žšÚ’Ø¬r
