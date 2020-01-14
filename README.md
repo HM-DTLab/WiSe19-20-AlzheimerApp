@@ -22,39 +22,18 @@ Die Idee war es die Funktionsweise von Notizzetteln und Post-its zu erweitern, i
 
 Die Anwendung soll die Vorteile dieser Formen der Informationsspeicherung vereinen und dadurch die Nachteile minimieren.
 
-**Post-its**
- 
- Vorteile:
- + klein und handlich
- + Information kann direkt an Ort/Gegenstand angebracht werden, an dem sie benötigt wird
- 
 
- Nachteile:
- - wenig platz für Informationen
- - nur Textinhalt möglich
- - "bei Verlust weg"
-
-**Notizzettel**
- 
- Nachteile:
- - unhandlich
- - durch Handschrift schnell unübersichtlich bei einer vollgeschriebenen Seite
- - nur Textinhalt möglich
- - "bei Verlust weg"
-
- Vorteile:
- + meist ausreichend Platz
-
-**Digital**
-
- Vorteile:
- - annähernd unbegrenzter speicher
- - ebenso Bilder möglich sowie Audio- und Video-Inhalte
- - großzahl an Informationen kann durch gutes Layout trotzdem übersichtlich sein
-
- Nachteile:
- - Bedienbarkeit kann schnell zu komplex sein
- - Zugriff auf gewünschte Inhalte teilweise unpraktisch
+| **Post-its** | **Notizzettel** | **Digital** |
+| ------ | ------ | ------ |
+| **Vorteile** | **Vorteile** | **Vorteile** |
+klein und handlich |meist ausreichend Platz|annähernd unbegrenzter speicher|
+Information kann direkt an Ort/Gegenstand angebracht werden, an dem sie benötigt wird | | ebenso Bilder möglich sowie Audio- und Video-Inhalte | |
+|||großzahl an Informationen kann durch gutes Layout trotzdem übersichtlich sein|
+| **Nachteile** | **Nachteile** | **Nachteile** |
+|wenig platz für Informationen|unhandlich|Bedienbarkeit kann schnell zu komplex sein|
+|nur Textinhalt möglich|durch Handschrift schnell unübersichtlich bei einer vollgeschriebenen Seite|Zugriff auf gewünschte Inhalte teilweise unpraktisch|
+|"bei Verlust weg"|nur Textinhalt möglich||
+||"bei Verlust weg"||
 
 
 => es wurde eine Lösung gesucht, die ...
