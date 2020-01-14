@@ -1,3 +1,111 @@
-NÄËz)‡y¯-zÀbrnûKaj[bÅ‰ﬁ∆◊õz∂´mË≠zÁzÎÜ∑¢mÈÕâ»mæä·jw^ùÁ´Ç|ﬁûÈ›ãh±©ÈjÀù◊´J◊•ïÁ¢ù¯û»ßv)Œ≠Ÿﬁ≠⁄∫gß∂«^ΩÈh¶gß∂öËqÎ,ävÎjw!”éÎyßfx	sÖË¶z∞)•Ëßxâﬂ¢πö∂*'≤È›Á\ÜŸ‚≤•}ÁÎ\·z)û≠Í‰≠©‰µ‡%ÅÈûäw¨jÎ)≠Î,≠È^j«§¢òûÆ“'z)ﬁò˙ËçÈ-ö+Az◊¢ñ(.ûËú	öŒâ÷y¥ûÆ¯úzÀßu◊´Î≠±»^ú	sÖË¶z∏±Èe±»Z~‹.≠◊Ø¢w¢ùÍ∆ÆÍiy´¨±Á!±+nuÈÌzw¢ù‡)•ÈÌ¬'$z[]â‡%Œ¢ôÍœjÿûû◊ßä`%ñ÷†ÖÈ_z{(ñVﬁÆ»úÜ÷nö◊¢ï´úÖ´¨¶∑¨≤∑•y´'Ñû‹"rG•µ‡'¡È›∫x≠∑¢µÎfä—‚ï˜Ø¢t
-á^≥•röú	eµ®,ÅËûÀguÈ⁄ûõ≠ß!∂»ßu∑¢≤òûñÃä«äi˜ﬁzf¨rßxW´û«°zª¨¬È›≤◊•ñ€(π%ÆÈ‡z{ßtùâÈÓûûW¢∂È‡zvﬁ≠Ë≠Y^≥¨ô©Ïâ»gâ»môÍ‰zyûäYdjy›i€´rbÇ+Zñ¨•ËúÖÍÌ¡Í›z{ßvòr≤+Ö©ﬁäw¶ÅÏ'±»mzs´∑ÒûÅÈÏµ©›mÁﬁ≤ÿ†∑´uÈœÆÜÂz`^≠Ë≠≤xúÜ÷•Œ¢ôÍﬁÆJ⁄û◊åz{ÖÈ€z{bÅÈÕ¢ÿ≥z{¶≤'!jv•ïÎÆ)ÁùÍÁŒÈ'ùÈÃä◊ËÆ€Ü∑¢µÈ›z≤´jy!z+pz∑^û)¶zµ&}©‡≠ËúÖÍﬁ6ãbÕÈˇ∏ßùÍÓûßmÈÌä]jh≠ô©›zp%ñ÷†¬'†{	Ïrfz+-zπ‰jy‘û«´xüÅ¶ﬁ¡™ﬁ±Ëßx	zwnûÓ{pâ…ñwbxJ‰≠©‰µÈ›zp%ñ÷†zπ^â»mzªbù◊¶v'ÄüßvÈ‡jY^≥¨v'èjÿûû◊ß≤'!û'!∂g´ëÈ‰ûwßv("µ©l•ËúÖÍÌ'àù˙+ô´b¢wß¡Í›zwn≠»^äwß™∞®uÊÆra »¨rÓÇx%â»`zfúÜ“yÁbxá^zÈ›uÍÎzÀdjy⁄π»`j|⁄ù◊´≤¨µ©mz‹≠◊ß'àuÁ∞j∑¨v'Ö∫y-äâÏ¡Ë¨z˙'6ãbœ7≠µÈg∫wO¢Àb∂ÃÓzºä◊´û)›ziöû»ûö+]z`‚Ç+ZïÈÔz∑¢û–‚x	zwnû(ñWbyZ+µË•yÿû±Í≈¢πûù◊´"wËÆf≠äâÏ≤ó¢r´∫x/z∑¢ùÈÓù◊bx÷úÜ◊¢ïÈ¢û)¢z∑ß>ã-ä€¢ª^äWæíW¢ûÈ›Ö©›ñ'!¯âﬂ¢πö∂*'ë©Áv*ﬁí÷ß:ªËûÀZù÷ßÅÊÎi»m¡Í›zvßuÈ¨âÊﬁûÿ†∑´t÷úÜ◊¢ïÏû()ï´s~≤'~äÊjÿ®ùÈÁ∫¥ﬁ∆ÿßÖ©mö	brﬁâW´ñÎ-¡Ë¢ÿ≥ÕÎmzSZr^äWÆûßvXúÖ€´r⁄ù€Ü∏ü∂«!ùÈe∫vﬁÆ»úÜŸbrﬁâËßzªËñX±»kâÊﬁùÈ“z+^ûÍ”{bû•∂h%â»[z%^Æ[¨∑†VäÌz)^˙g¢≤÷Æ≤∑¢rßt˘Z∑0‚Ç+ZïZ+µË•y©ÁÖÍÁvÈ€z
-ﬁü;^Æ ^â»^≠Êﬁû äW^Æh%â»l£ûÁb¢È›V'^†â·j[^Ç∫3jZúâﬂ¢πö∂*'zyûwn≠»`∫◊¨-¨®∫€k¢‹›zfﬁÆ»úÜŸbräsZr^äWÅyÿûù∂´ëË≠ë©Á±»gzYs∫J&¶W±±ËßfË+â˜⁄π¯¬{Ü◊àû•µÎ^ä\ä«Æûö⁄íÿ¨r
+# ToDo: eingef√ºgte, stichpunkthaltige Texte √ºberarbeiten/neuschreiben. Nicht vorhandene erg√§nzen und Fotos an passender Stelle einf√ºgen (sind in Ordner documents_development_process in branch 047-readme)
+
+# AlzheimerApp, eine Informations- und Ged√§chtnishilfe f√ºr Alzheimererkrankte
+
+## Algemeines
+(aus press-release kopiert)
+
+In einem Projekt mit Beteiligung von Amazon Web Services und der Deutschen Alzheimergesellschaft wurde von einer Gruppe aus sechs Studenten eine App entwickelt,
+die Alzheimer-Patienten im Alltag helfen soll.
+
+## √úbersicht
+
+(Zum teil auch aus pressrelease)
+
+Die Entwickelte Anwendung arbeitet mit Hilfe von QR-Codes, welche an Alltagsgegenst√§nden angebracht sind 
+(beispielsweise Kaffeemaschine, Fernseher usw.) und stellt so Erkl√§rungen und Bedienungsanleitungen bereit. Alles was man sich nicht merken kann/will, kann dadurch digital gespeichert werden und physisch an einem gew√ºnschten Ort/Gegenstand befestigt werden.
+
+## Problem
+
+Bereits nicht alzheimererkrante Menschen ben√∂tigen Notizen um sich an alles erinnnern zu k√∂nnen.
+Mit fortschreitender Krankheit werden immer Umfangreichere Notizen/Erinnerungen ben√∂tigt, damit man den Alltag wie gew√ºnscht meistern kann.
+Unsere Aufgabe war es eine Anwendung zu Entwickeln, die Erkrankten den Alltag erleichtert indem die Anwendung alles was die Patienten sich nicht merken k√∂nnen digital speichert. Die Informationen werden durch einen qr-Code auch physisch zug√§nglich gemacht.
+
+## Idee
+
+(die Idee und der rest kann auch ganz anders gestaltet werden.)
+
+Die Idee war es die Funktionsweise von Notizzetteln und Post-its zu erweitern, indem man sie mit dem Digitalen vereint.
+
+Die Anwendung soll die Vorteile dieser Formen der Informationsspeicherung vereinen und die Nachteile minimieren.
+
+**Post-its**
+ 
+ Vorteile:
+ + klein und handlich
+ + Information kann direkt an Ort/Gegenstand angebracht werden, an dem sie ben√∂tigt wird
+ 
+
+ Nachteile:
+ - wenig platz f√ºr Informationen
+ - nur Textinhalt m√∂glich
+ - "bei Verlust weg"
+
+**Notizzettel**
+ 
+ Nachteile:
+ - unhandlich
+ - durch Handschrift schnell un√ºbersichtlich bei einer vollgeschriebenen Seite
+ - nur Textinhalt m√∂glich
+ - "bei Verlust weg"
+
+ Vorteile:
+ + meist ausreichend Platz
+
+**Digital**
+
+ Vorteile:
+ - ann√§hernd unbegrenzter speicher
+ - ebenso Bilder m√∂glich sowie Audio- und Video-Inhalte
+ - gro√üzahl an Informationen kann durch gutes Layout trotzdem √ºbersichtlich sein
+
+ Nachteile:
+ - Bedienbarkeit kann schnell zu komplex sein
+ - Zugriff auf gew√ºnschte Inhalte teilweise unpraktisch
+
+
+=> es wurde eine L√∂sung gesucht, die ...
+
+- handlich ist
+- √ºbersichtlich ist
+- Information direkt an dem betroffenem Gegenstand zur Verf√ºgung stellen kann
+- bei Verlust die Informationen einfach wiederhergestellen kann
+- mehr Informationen beinhalten kann
+- andere Informationsformate unterst√ºtzt
+- einfach zu bedienen ist
+
+## L√∂sung
+
+Die meisten dieser Punkte vereinigte eine L√∂sung bei der die Informationen in Text-, Audio-, und Videoformation online gespeichert werden kann. 
+Wobei die zuvor gespeicherten Informationen physisch, in Form eines Qr-Codes an einem beliebigen Gegenstand befestigt werden.
+Dabei wurde darauf geachtet, dass die Erstelleung eines neuen Qr-Codes in m√∂glichst wenig Schritten zu realisieren ist. Dadurch sollen nicht nur Betreuer, sondern auch die Patienten selbst neue Qr-Codes erstellen k√∂nnen.
+Durch das Scannen eines Qr-Codes gelang man direkt zu dessen Informationen, die online hinterlegt wurden. (=> leichte bedienung)
+Falls ein Qr-Code verloren geht, kann dieser erneut ausgedruckt werden.
+
+## Bedienung der Anwendung
+
+ToDo: hier wichtigsten Fotos einf√ºgen und erkl√§ren.
+
+(Anmelden(Bearbeiter-BenutzerSicht), scannen/neuen Qr-code erstellen, Qr-Code Informationen abrufen/bearbeiten)
+
+## Zusammenfassung
+
+ToDo hier noch text einf√ºgen
+
+### Erstellte Dokumente bei der Projektplanung
+
+ToDo hier noch text einf√ºgen (Die Begirffe in einem Flie√ütext verwenden, in dem kurz erkl√§rt wird warum man sie erstellt hat). wireframes vll auch als .pdf und nicht als .pptx
+
+[Wireframes](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/Wireframes.pptx) 
+
+[Press Release](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/Press_Release%20Gruppe%204.pdf)
+
+[User Stories](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/UserStories.pdf)
+
+[FAQs](https://gitlab.lrz.de/swe1ws20192020/g4/blob/047-Readme/documents_development_process/FAQs%20Softwareengeneering.pdf)
+
+
+
+ToDo: l√∂schen
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
